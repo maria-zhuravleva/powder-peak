@@ -5,9 +5,10 @@ import { isLoggedIn } from '../middleware/middleware.js'
 const router = Router()
 
 router.get('/', resortsCtrl.index)
-router.get('/:resortId', resortsCtrl.show)
-router.get("/:resortId/edit", resortsCtrl.edit)
+router.get('/:resortId', isLoggedIn, resortsCtrl.show)
+router.get("/:resortId/edit", isLoggedIn, resortsCtrl.edit)
 router.post('/', isLoggedIn, resortsCtrl.create)
+router.put("/:resortId", isLoggedIn, resortsCtrl.update)
 
 export {
   router
