@@ -1,0 +1,16 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>All Resorts🗻</h1>
+  <ul>
+    <% resorts.forEach(resort => { %>
+      <li>
+        🗻
+        <a href="/resorts/<%= resort._id %>"><%= resort.name %>
+        </a> 
+    <% }) %>
+  </ul>
+</section>
+
+<%- include('../partials/footer') %>
