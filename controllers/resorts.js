@@ -26,7 +26,23 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  Resort.findById(req.params.resortId)
+  .populate("creator")
+  .then(resort => {
+    res.render('resorts/show', {
+      resort,
+      title: "🗻 show"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/resorts')
+  })
+}
+
 export {
   index,
-  create
+  create,
+  show
 }

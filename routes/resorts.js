@@ -6,6 +6,7 @@ const router = Router()
 
 router.get('/', resortsCtrl.index)
 router.post('/', isLoggedIn, resortsCtrl.create)
+router.get('/:resortId', resortsCtrl.show)
 
 export {
   router

@@ -1,0 +1,19 @@
+<%- include('../partials/html-head') %>
+<!-- <link rel="stylesheet" href="/stylesheets/movies/show.css" /> -->
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <section>
+    <div>Name: </div>
+    <div><%= resort.name %></div>
+    <div>Location: </div>
+    <div><%= resort.location %></div>
+    <div>Difficulty Level: </div>
+    <div><%= resort.difficultyLevel %></div>
+    <div>Amenities: </div>
+    <div><%= resort.amenities.join(', ') %></div>
+  </section>
+</main>
+  
+<%- include('../partials/footer') %>

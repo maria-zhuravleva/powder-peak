@@ -2,16 +2,6 @@
 <%- include('../partials/nav') %>
 
 <h1>All Resorts🗻</h1>
-<!-- <section>
-  <ul>
-    <%# resorts.forEach(resort => { %>
-      <li>
-        🗻
-        <a href="/resorts/<%# resort._id %>"><%# resort.name %>
-        </a> 
-    <%# }) %>
-  </ul>
-</section> -->
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/movies/index.css" />
 <%- include('../partials/nav') %>
@@ -30,7 +20,9 @@
     <tbody>
       <% resorts.forEach(resort => { %>
         <tr>
-          <td><%= resort.name %></td>
+          <td> <a href="/resorts/<%= resort._id %>">
+            <%= resort.name %>
+          </a></td>
           <td><%= resort.location %></td>
           <td><%= resort.difficultyLevel %></td>
           <td><%= resort.amenities.join(', ') %></td> 
