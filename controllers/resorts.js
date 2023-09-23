@@ -150,6 +150,30 @@ function editReview(req, res) {
   })
 }
 
+function updateReview(req, res) {
+  Resort.findById(req.params.resortId)
+  .then(resort => {
+    const review = resort.reviews.id(req.params.reviewId)
+    if (review.commenter.equals(req.user.profile._id)) {
+      review.set(req.body)
+      resort.save()
+      .then(() => {
+        res.redirect(`/resorts/${resort._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/resorts')
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/resorts')
+  })
+}
+
 export {
   index,
   create,
@@ -159,5 +183,6 @@ export {
   deleteResort as delete,
   createReview,
   deleteReview,
-  editReview
+  editReview,
+  updateReview
 }

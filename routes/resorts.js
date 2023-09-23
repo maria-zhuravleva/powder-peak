@@ -11,6 +11,7 @@ router.get('/:resortId/reviews/:reviewId/edit', isLoggedIn, resortsCtrl.editRevi
 router.post('/', isLoggedIn, resortsCtrl.create)
 router.post('/:resortId/reviews', isLoggedIn, resortsCtrl.createReview)
 router.put("/:resortId", isLoggedIn, resortsCtrl.update)
+router.put('/:resortId/reviews/:reviewId', isLoggedIn, resortsCtrl.updateReview)
 router.delete("/:resortId", isLoggedIn, resortsCtrl.delete)
 router.delete('/:resortId/reviews/:reviewId', isLoggedIn, resortsCtrl.deleteReview)
 
