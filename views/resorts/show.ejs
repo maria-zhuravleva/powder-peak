@@ -58,18 +58,28 @@
           </tr>
         </thead>
         <tbody>
-          <% resort.reviews.forEach(function(review) { %>
+          <% resort.reviews?.forEach(function(review) { %>
             <tr>
-              <td><%= review.createdAt.toLocaleDateString() %></td>
+              <td>
+                <p>
+                  <%= review.commenter.name %>
+                  left a review:
+                </p>
+              </td>
               <td><%= review.content %></td>
               <td><%= review.rating %></td>
-              <!-- <td>
-                <img src="<%# review.commenter.avatar %>" alt="picture of the commenter">
-                <p>
-                  <%# review.commenter.name %>
-                  left a review
-                </p></td> -->
+              <td><%= review.createdAt.toLocaleDateString() %></td>
             </tr>
+            <form 
+            action="/resorts/<%= resort._id %>/reviews/<%= review._id %>?_method=DELETE" 
+            method="POST"
+            class="inline"
+            >
+              <button class="btn" type="submit">Delete Review</button>
+            </form>
+            <!-- <a href="/resorts/<%# resort._id %>/reviews/<%# review._id %>/edit">
+              <button class="btn">Edit Review</button>
+            </a> -->
           <% }) %>
         </tbody>
       </table>

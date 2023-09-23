@@ -28,7 +28,10 @@ function create(req, res) {
 
 function show(req, res) {
   Resort.findById(req.params.resortId)
-  .populate("creator")
+  .populate([
+    {path: "creator"},
+    {path: "reviews.commenter"}
+  ])
   .then(resort => {
     res.render('resorts/show', {
       resort,
@@ -103,6 +106,30 @@ function createReview(req, res) {
   })
 }
 
+function deleteReview(req, res) {
+  Resort.findById(req.params.resortId)
+  .then(resort => {
+    const review = resort.reviews.id(req.params.reviewId)
+    if (review.commenter.equals(req.user.profile._id)) {
+      resort.reviews.remove(review)
+      resort.save()
+      .then(() => {
+        res.redirect(`/resorts/${resort._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/resorts')
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/resorts')
+  })
+}
+
 export {
   index,
   create,
@@ -110,5 +137,6 @@ export {
   edit,
   update,
   deleteResort as delete,
-  createReview
+  createReview,
+  deleteReview
 }
