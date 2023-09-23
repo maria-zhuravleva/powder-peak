@@ -86,6 +86,7 @@ function deleteResort(req, res) {
 function createReview(req, res) {
   Resort.findById(req.params.resortId)
   .then(resort => {
+    req.body.commenter = req.user.profile._id
     resort.reviews.push(req.body)
     resort.save()
     .then(() => {
