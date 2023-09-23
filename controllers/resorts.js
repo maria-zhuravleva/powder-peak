@@ -14,6 +14,19 @@ function index(req, res) {
   })
 }
 
+function create(req, res) {
+  req.body.creator = req.user.profile._id
+  Resort.create(req.body)
+  .then(resort => {
+    res.redirect('/resorts')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/resorts')
+  })
+}
+
 export {
-  index
+  index,
+  create
 }

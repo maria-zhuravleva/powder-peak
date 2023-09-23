@@ -14,7 +14,7 @@ const resortSchema = new Schema({
   name: String,
   location: String,
   difficultyLevel: String,
-  amenities: String,
+  amenities: [String],
   creator: {type: Schema.Types.ObjectId, ref: "Profile"},
   reviews: [reviewSchema]
 }, {
