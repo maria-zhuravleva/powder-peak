@@ -41,8 +41,23 @@ function show(req, res) {
   })
 }
 
+function edit(req, res) {
+  Resort.findById(req.params.resortId)
+  .then(resort => {
+    res.render("resorts/edit", {
+      resort,
+      title: "Edit Resort"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
+
 export {
   index,
   create,
-  show
+  show,
+  edit
 }

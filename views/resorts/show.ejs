@@ -14,6 +14,11 @@
     <div>Amenities: </div>
     <div><%= resort.amenities.join(', ') %></div>
   </section>
+  <section>
+    <a href="/resorts/<%= resort._id %>/edit">
+      <button>Edit Resort</button>
+    </a>
+  </section>
 </main>
   
 <%- include('../partials/footer') %>
