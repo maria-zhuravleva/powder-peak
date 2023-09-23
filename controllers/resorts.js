@@ -130,6 +130,26 @@ function deleteReview(req, res) {
   })
 }
 
+function editReview(req, res) {
+  Resort.findById(req.params.resortId)
+  .then(resort => {
+    const review = resort.reviews.id(req.params.reviewId)
+    if (review.commenter.equals(req.user.profile._id)) {
+      res.render('resorts/editReview', {
+        resort, 
+        review,
+        title: 'Update Review'
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/resorts')
+  })
+}
+
 export {
   index,
   create,
@@ -138,5 +158,6 @@ export {
   update,
   deleteResort as delete,
   createReview,
-  deleteReview
+  deleteReview,
+  editReview
 }

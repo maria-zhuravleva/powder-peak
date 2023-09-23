@@ -70,16 +70,20 @@
               <td><%= review.rating %></td>
               <td><%= review.createdAt.toLocaleDateString() %></td>
             </tr>
-            <form 
-            action="/resorts/<%= resort._id %>/reviews/<%= review._id %>?_method=DELETE" 
-            method="POST"
-            class="inline"
-            >
-              <button class="btn" type="submit">Delete Review</button>
-            </form>
-            <!-- <a href="/resorts/<%# resort._id %>/reviews/<%# review._id %>/edit">
-              <button class="btn">Edit Review</button>
-            </a> -->
+            <tr>
+              <% if (review.commenter.equals(user?.profile._id)) { %>
+                <a href="/resorts/<%= resort._id %>/reviews/<%= review._id %>/edit">
+                  <button class="btn">Edit Review</button>
+                </a>
+                <form 
+                action="/resorts/<%= resort._id %>/reviews/<%= review._id %>?_method=DELETE" 
+                method="POST"
+                class="inline"
+                >
+                  <button class="btn" type="submit">Delete Review</button>
+                </form>
+                <% } %>
+            </tr>
           <% }) %>
         </tbody>
       </table>
