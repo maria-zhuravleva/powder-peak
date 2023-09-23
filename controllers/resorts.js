@@ -72,10 +72,22 @@ function update(req, res) {
   })
 }
 
+function deleteResort(req, res) {
+  Resort.findByIdAndDelete(req.params.resortId)
+  .then(resort => {
+    res.redirect("/resorts")
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/resorts")
+  })
+}
+
 export {
   index,
   create,
   show,
   edit,
-  update
+  update,
+  deleteResort as delete
 }

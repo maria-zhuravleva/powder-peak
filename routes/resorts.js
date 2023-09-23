@@ -9,6 +9,7 @@ router.get('/:resortId', isLoggedIn, resortsCtrl.show)
 router.get("/:resortId/edit", isLoggedIn, resortsCtrl.edit)
 router.post('/', isLoggedIn, resortsCtrl.create)
 router.put("/:resortId", isLoggedIn, resortsCtrl.update)
+router.delete("/:resortId", isLoggedIn, resortsCtrl.delete)
 
 export {
   router

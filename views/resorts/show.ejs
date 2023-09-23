@@ -18,6 +18,12 @@
     <a href="/resorts/<%= resort._id %>/edit">
       <button>Edit Resort</button>
     </a>
+    <form 
+    action="/resorts/<%= resort._id %>?_method=DELETE" 
+    method="POST"
+    >
+    <button type="submit">Delete Resort</button>
+  </form>
   </section>
 </main>
   
