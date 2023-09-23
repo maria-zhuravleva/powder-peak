@@ -25,6 +25,26 @@
     <button type="submit">Delete Resort</button>
   </form>
   </section>
+  <section>
+    <h2>Reviews</h2>
+  <form 
+    id="add-review-form"
+    action="/resorts/<%= resort._id %>/reviews"
+    method="POST"
+  >
+    <label for="content-textarea">Review:</label>
+    <textarea name="content" id="content-textarea"></textarea>
+    <label for="rating-select">Rating:</label>
+    <select name="rating" id="rating-select">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5" selected>5</option>
+    </select>
+    <button type="submit">Add Review</button>
+  </form>
+  </section>
 </main>
   
 <%- include('../partials/footer') %>

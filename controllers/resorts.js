@@ -83,11 +83,31 @@ function deleteResort(req, res) {
   })
 }
 
+function createReview(req, res) {
+  Resort.findById(req.params.resortId)
+  .then(resort => {
+    resort.reviews.push(req.body)
+    resort.save()
+    .then(() => {
+      res.redirect(`/resorts/${resort._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/resorts')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/resorts')
+  })
+}
+
 export {
   index,
   create,
   show,
   edit,
   update,
-  deleteResort as delete
+  deleteResort as delete,
+  createReview
 }

@@ -8,6 +8,7 @@ router.get('/', resortsCtrl.index)
 router.get('/:resortId', isLoggedIn, resortsCtrl.show)
 router.get("/:resortId/edit", isLoggedIn, resortsCtrl.edit)
 router.post('/', isLoggedIn, resortsCtrl.create)
+router.post('/:resortId/reviews', resortsCtrl.createReview)
 router.put("/:resortId", isLoggedIn, resortsCtrl.update)
 router.delete("/:resortId", isLoggedIn, resortsCtrl.delete)
 
