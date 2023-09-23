@@ -2,7 +2,15 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const tacoSchema = new Schema({
+const reviewSchema = new Schema({
+  content: String,
+  rating: {type: Number, min: 1, max: 5, default: 5},
+  commenter: {type: Schema.Types.ObjectId, ref: "Profile"}
+}, {
+  timestamps: true
+})
+
+const resortSchema = new Schema({
   name: String,
   location: String,
   difficultyLevel: String,
@@ -13,8 +21,8 @@ const tacoSchema = new Schema({
   timestamps: true
 })
 
-const Taco = mongoose.model('Taco', tacoSchema)
+const Resort = mongoose.model('Resort', resortSchema)
 
 export {
-  Taco
+  Resort
 }
