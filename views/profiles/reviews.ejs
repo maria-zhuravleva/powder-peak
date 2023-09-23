@@ -1,0 +1,26 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <a href="/profiles/<%= profile._id %>">Back to Profile</a>
+
+  <h1>Reviews</h1>
+  <div>
+    <p>Your reviews:</p>
+    <% if (resorts && resorts.length > 0) { %>
+      <% resorts.forEach(resort => { %>
+        <% resort.reviews.forEach(review => { %>
+          <div>
+            <p>Resort: <%= resort.name %></p>
+            <p>Content: <%= review.content %></p>
+            <p>Rating: <%= review.rating %></p>
+          </div>
+        <% }) %>
+      <% }) %>
+    <% } else { %>
+      <p>No reviews found</p>
+    <% } %>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>

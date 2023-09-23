@@ -1,4 +1,5 @@
 import { Profile } from '../models/profile.js'
+import { Resort } from '../models/resort.js'
 
 function index(req, res) {
   Profile.find({})
@@ -30,7 +31,32 @@ function show(req, res) {
   })
 }
 
+function renderReviews(req, res){
+  const profileId = req.params.profileId;
+  Resort.find({ creator: profileId })
+    .then(resorts => {
+      Profile.findById(profileId)
+        .then(profile => {
+          res.render('profiles/reviews', {
+            profile,
+            profileId, 
+            resorts,
+            title: 'See All Reviews'
+          });
+        })
+        .catch(err => {
+          console.log(err);
+          res.redirect('/profiles');
+        });
+    })
+    .catch(err => {
+      console.log(err);
+      res.redirect('/profiles');
+    });
+}
+
 export {
   index,
-  show
+  show,
+  renderReviews
 }

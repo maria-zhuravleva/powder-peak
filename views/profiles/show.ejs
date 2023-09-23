@@ -10,6 +10,21 @@
     >
   </div>
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+  <a href="/profiles/<%= profile._id%>/reviews">View Reviews</a>
+  <!-- <div>
+    <p>Your reviews:</p>
+    
+    <%# if (reviews && reviews.length > 0) { %>
+      <%# reviews.forEach(review => { %>
+        <div>
+          <p>Content: <%# review.content %></p>
+          <p>Rating: <%# review.rating %></p>
+        </div>
+      <%# }) %>
+    <%# } else { %>
+      <p>No reviews found</p>
+    <%# } %>
+  </div> -->
 </main>
 
 <%- include('../partials/footer') %>

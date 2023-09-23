@@ -6,6 +6,7 @@ const router = Router()
 
 router.get('/', isLoggedIn, profilesCtrl.index)
 router.get('/:profileId', isLoggedIn, profilesCtrl.show)
+router.get('/:profileId/reviews', isLoggedIn, profilesCtrl.renderReviews)
 
 export {
   router
