@@ -2,6 +2,13 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
+const favoriteResortSchema = new Schema({
+  owner: {type: Schema.Types.ObjectId, ref: "Profile"},
+  name: String
+}, {
+  timestamps: true
+})
+
 const reviewSchema = new Schema({
   content: String,
   rating: {type: Number, min: 1, max: 5, default: 5},
@@ -16,6 +23,7 @@ const resortSchema = new Schema({
   difficultyLevel: String,
   amenities: [String],
   creator: {type: Schema.Types.ObjectId, ref: "Profile"},
+  favoriteResorts: [favoriteResortSchema],
   reviews: [reviewSchema]
 }, {
   timestamps: true

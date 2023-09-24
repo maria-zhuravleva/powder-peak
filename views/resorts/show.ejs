@@ -26,6 +26,13 @@
   </form>
   </section>
   <section>
+    <% if (user) { %>
+      <form action="/resorts/<%= resort._id %>/favoriteResorts" method="POST">
+        <button class="btn" type="submit">Add to Favorite</button>
+      </form>
+    <% } %>
+  </section>
+  <section>
     <h2>Reviews</h2>
     <% if (user) { %>
       <form 
