@@ -177,15 +177,23 @@ function updateReview(req, res) {
 function addFavoriteResort(req, res) {
   Resort.findById(req.params.resortId)
   .then(resort => {
+    const isAlreadyFavorite = resort.favoriteResorts.some(favorite => favorite.owner.equals(req.user.profile._id))
+    if (isAlreadyFavorite) {
+      console.log('Redirecting because already favorite')
+      return res.redirect(`/resorts/${resort._id}`)
+    }
     req.body.owner = req.user.profile._id
-    resort.favoriteResorts.push(req.body)
-    resort.save()
+
+    const newFavorite = {
+      owner: req.user.profile._id,
+      name: resort.name
+    }
+
+    resort.favoriteResorts.push(newFavorite)
+    return resort.save()
     .then(() => {
-      res.redirect(`/resorts/${resort._id}`)
-    })
-    .catch(err => {
-      console.log(err)
-      res.redirect('/resorts')
+      console.log('Redirecting after save')
+      res.redirect(`/resorts/${req.params.resortId}`)
     })
   })
   .catch(err => {
@@ -202,7 +210,7 @@ function deleteFavoriteResort(req, res){
       resort.favoriteResorts.remove(favoriteResort)
       resort.save()
       .then(() => {
-        res.redirect(`/profiles/${profile._id}`)
+        res.redirect(`/profiles/${req.user.profile._id}`)
       })
       .catch(err => {
         console.log(err)
