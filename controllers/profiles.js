@@ -79,9 +79,12 @@ function renderFavoriteResorts(req, res){
     });
 }
 
+
+
+
 export {
   index,
   show,
   renderReviews,
-  renderFavoriteResorts
+  renderFavoriteResorts,
 }

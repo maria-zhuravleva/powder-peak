@@ -15,6 +15,7 @@ router.put("/:resortId", isLoggedIn, resortsCtrl.update)
 router.put('/:resortId/reviews/:reviewId', isLoggedIn, resortsCtrl.updateReview)
 router.delete("/:resortId", isLoggedIn, resortsCtrl.delete)
 router.delete('/:resortId/reviews/:reviewId', isLoggedIn, resortsCtrl.deleteReview)
+router.delete('/:resortId/favoriteResorts/:favoriteResortId', isLoggedIn, resortsCtrl.deleteFavoriteResort)
 
 export {
   router

@@ -194,6 +194,30 @@ function addFavoriteResort(req, res) {
   })
 }
 
+function deleteFavoriteResort(req, res){
+  Resort.findById(req.params.resortId)
+  .then(resort => {
+    const favoriteResort = resort.favoriteResorts.id(req.params.favoriteResortId)
+    if (favoriteResort.owner.equals(req.user.profile._id)) {
+      resort.favoriteResorts.remove(favoriteResort)
+      resort.save()
+      .then(() => {
+        res.redirect(`/profiles/${profile._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/profiles')
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/profiles')
+  })
+}
+
 export {
   index,
   create,
@@ -205,5 +229,6 @@ export {
   deleteReview,
   editReview,
   updateReview,
-  addFavoriteResort
+  addFavoriteResort,
+  deleteFavoriteResort
 }
