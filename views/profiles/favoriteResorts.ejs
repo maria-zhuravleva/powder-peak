@@ -12,6 +12,13 @@
           <div>
             <p>Resort: <%= resort.name %></p>
             <p>Location: <%= resort.location %></p>
+            <form 
+              action="/profiles/<%= profile._id%>/favoriteResorts<%= favoriteResort._id %>?_method=DELETE" 
+              method="POST"
+              class="inline"
+              >
+              <button class="btn" type="submit">Delete Resort</button>
+            </form>
           </div>
         <% }) %>
       <% }) %>
