@@ -174,6 +174,26 @@ function updateReview(req, res) {
   })
 }
 
+function addFavoriteResort(req, res) {
+  Resort.findById(req.params.resortId)
+  .then(resort => {
+    req.body.owner = req.user.profile._id
+    resort.favoriteResorts.push(req.body)
+    resort.save()
+    .then(() => {
+      res.redirect(`/resorts/${resort._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/resorts')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/resorts')
+  })
+}
+
 export {
   index,
   create,
@@ -184,5 +204,6 @@ export {
   createReview,
   deleteReview,
   editReview,
-  updateReview
+  updateReview,
+  addFavoriteResort
 }
