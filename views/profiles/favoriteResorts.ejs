@@ -1,0 +1,24 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <a href="/profiles/<%= profile._id %>">Back to Profile</a>
+
+  <h1>Favorite Resorts🗻</h1>
+  <div>
+    <% if (resorts && resorts.length > 0) { %>
+      <% resorts.forEach(resort => { %>
+        <% resort.favoriteResorts.forEach(favoriteResort => { %>
+          <div>
+            <p>Resort: <%= resort.name %></p>
+            <p>Location: <%= resort.location %></p>
+          </div>
+        <% }) %>
+      <% }) %>
+    <% } else { %>
+      <p>No favorite resorts</p>
+    <% } %>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
