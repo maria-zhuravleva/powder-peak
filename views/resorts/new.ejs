@@ -1,0 +1,42 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="../../public/stylesheets/resorts/new.css" />
+<%- include('../partials/nav') %>
+
+<section>
+  <% if (user) { %>
+    <h2>Add a Resort!</h2>
+    <form action="/resorts" method="POST" id="new-form">
+      <label for="name-input">
+        Name: 
+        <input type="text" name="name" autocomplete="off">
+      </label>
+      <label for="location-input">
+        Location:
+        <input type="text" name="location">
+      </label>
+      <label for="difficultyLevel-input">
+        Difficulty Level:
+        <input type="text" name="difficultyLevel">
+      </label>
+      <label for="amenities-input">
+        Amenities:
+        <input type="text" name="amenities">
+      </label>
+      <button type="submit">Add 🗻</button>
+    </form>
+  <% } %>
+</section>
+
+<div class="contact">
+  <div class="contact-text">
+    <div class="contact-items">
+      <h2>Contact Us</h2>
+      <input type="text" placeholder="Your name ...">
+      <input type="text" placeholder="Your email ...">
+      <textarea cols="30" rows="5" placeholder="Your message..."></textarea>
+      <a href="http://#">Submit</a>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

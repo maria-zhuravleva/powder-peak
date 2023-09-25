@@ -14,6 +14,12 @@ function index(req, res) {
   })
 }
 
+function newResort(req, res) {
+  res.render("resorts/new", {
+    title: "Add New Resort",
+  })
+}
+
 function create(req, res) {
   req.body.creator = req.user.profile._id
   Resort.create(req.body)
@@ -228,6 +234,7 @@ function deleteFavoriteResort(req, res){
 
 export {
   index,
+  newResort as new,
   create,
   show,
   edit,

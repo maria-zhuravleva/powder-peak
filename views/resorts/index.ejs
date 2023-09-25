@@ -29,31 +29,12 @@
         <% }) %>
     </tbody>
   </table>
+  <div>
+    <a 
+    href="/resorts/new">
+    <button type="submit">Add New Resort</button>
+    </a>
+  </div>
 </main>
-
-<section>
-  <% if (user) { %>
-    <h2>Add a Resort!</h2>
-    <form action="/resorts" method="POST" id="new-form">
-      <label for="name-input">
-        Name: 
-        <input type="text" name="name" autocomplete="off">
-      </label>
-      <label for="location-input">
-        Location:
-        <input type="text" name="location">
-      </label>
-      <label for="difficultyLevel-input">
-        Difficulty Level:
-        <input type="text" name="difficultyLevel">
-      </label>
-      <label for="amenities-input">
-        Amenities:
-        <input type="text" name="amenities">
-      </label>
-      <button type="submit">Add 🗻</button>
-    </form>
-  <% } %>
-</section>
 
 <%- include('../partials/footer') %>
