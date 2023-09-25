@@ -1,42 +1,165 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="../../public/stylesheets/resorts/new.css" />
-<%- include('../partials/nav') %>
+<link rel="stylesheet" href="/stylesheets/resorts/new.css" />
+<%# include('../partials/nav') %>
+<nav>
+  <div class="top-bar">
+    <div class="logo">logo</div>
+    <div class="menu">
+      <ul>
+        <li>
+          <a href="/">about</a>
+        </li>
+        <li>
+          <a href="/">home</a>
+        </li>
+        <li>
+          <a href="/resorts">resorts</a>
+        </li>
+        <li>
+          <a href="/profiles">profile</a>
+        </li>
+        <li>
+          <% if (user) { %>
+            <a href="/auth/logout" class="right">
+              <button type="submit">Logout</button>
+            </a>
+          <% } else { %>
+            <div 
+              id="g_id_onload"
+              data-client_id="<%= googleClientID %>"
+              data-login_uri="/auth/google"
+              data-auto_prompt="false"
+              data-prompt_parent_id="g_id_onload"
+            ></div>
+            <div 
+              class="g_id_signin right"
+              data-type="standard"
+              data-size="large"
+              data-theme="outline"
+              data-text="sign_in_with"
+              data-shape="rectangular"
+              data-logo_alignment="left"
+            ></div>
+          <% } %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- <div class="add-new-resort-form">
+  <div class="add-new-resort-form-text">
+    <div class="add-new-resort-form-items">
+      <%# if (user) { %>
+        <h2>Add New Resort</h2>
+        <form action="/resorts" method="POST" id="new-form">
+          <label for="name-input">
+            Name: 
+            <input type="text" name="name" autocomplete="off" id="name-input">
+          </label>
+          <label for="location-input">
+            Location:
+            <input type="text" name="location" id="location-input">
+          </label>
+          <label for="difficultyLevel-input">
+            Difficulty Level:
+            <input type="text" name="difficultyLevel" id="difficultyLevel-input">
+          </label>
+          <label for="amenities-input">
+            Amenities:
+            <textarea type="text" name="amenities" cols="30" rows="5" id="amenities-input"></textarea>
+          </label>
+          <button type="submit">Add 🗻</button>
+        </form>
+      <%# } %>
+    </div>
+  </div>
+</div> -->
 
-<section>
-  <% if (user) { %>
-    <h2>Add a Resort!</h2>
-    <form action="/resorts" method="POST" id="new-form">
-      <label for="name-input">
-        Name: 
-        <input type="text" name="name" autocomplete="off">
-      </label>
-      <label for="location-input">
-        Location:
-        <input type="text" name="location">
-      </label>
-      <label for="difficultyLevel-input">
-        Difficulty Level:
-        <input type="text" name="difficultyLevel">
-      </label>
-      <label for="amenities-input">
-        Amenities:
-        <input type="text" name="amenities">
-      </label>
-      <button type="submit">Add 🗻</button>
-    </form>
-  <% } %>
-</section>
-
-<div class="contact">
-  <div class="contact-text">
-    <div class="contact-items">
-      <h2>Contact Us</h2>
-      <input type="text" placeholder="Your name ...">
-      <input type="text" placeholder="Your email ...">
-      <textarea cols="30" rows="5" placeholder="Your message..."></textarea>
-      <a href="http://#">Submit</a>
+<div class="form-container">
+  <div class="add-new-resort-form">
+    <div class="add-new-resort-form-items">
+      <% if (user) { %>
+        <form action="/resorts" method="POST" id="new-form">
+          <h2>Add New Resort</h2>
+          <div class="form-item">
+            <div class="label">Name:</div>
+            <input type="text" name="name" autocomplete="off" id="name-input">
+          </div>
+          <div class="form-item">
+            <div class="label">Location:</div>
+            <input type="text" name="location" id="location-input">
+          </div>
+          <div class="form-item">
+            <div class="label">Difficulty Level:</div>
+            <input type="text" name="difficultyLevel" id="difficultyLevel-input">
+          </div>
+          <div class="form-item">
+            <div class="label">Amenities:</div>
+            <textarea type="text" name="amenities" cols="30" rows="5" id="amenities-input"></textarea>
+          </div>
+          <button type="submit">Add 🗻</button>
+        </form>
+      <% } %>
     </div>
   </div>
 </div>
+
+
+<!-- good one -->
+<!-- <div class="add-new-resort-form">
+  <div class="add-new-resort-form-items">
+    <%# if (user) { %>
+      <form action="/resorts" method="POST" id="new-form">
+        <h2>Add New Resort</h2>
+        <label for="name-input">
+          Name: 
+          <input type="text" name="name" autocomplete="off" id="name-input">
+        </label><br>
+        <label for="location-input">
+          Location:
+          <input type="text" name="location" id="location-input">
+        </label><br>
+        <label for="difficultyLevel-input">
+          Difficulty Level:
+          <input type="text" name="difficultyLevel" id="difficultyLevel-input">
+        </label><br>
+        <label for="amenities-input">
+          Amenities:
+          <textarea type="text" name="amenities" cols="30" rows="5" id="amenities-input"></textarea>
+        </label><br>
+        <button type="submit">Add 🗻</button>
+      </form>
+    <%# } %>
+  </div>
+</div> -->
+
+<!-- <div class="contact">
+  <div class="contact-text">
+    <div class="contact-items">
+      <%# if (user) { %>
+        <h2>Add New Resort</h2>
+        <form action="/resorts" method="POST" id="new-form">
+          <label for="name-input">
+            Name: 
+            <input type="text" name="name" autocomplete="off">
+          </label>
+          <label for="location-input">
+            Location:
+            <input type="text" name="location">
+          </label>
+          <label for="difficultyLevel-input">
+            Difficulty Level:
+            <input type="text" name="difficultyLevel">
+          </label>
+          <label for="amenities-input">
+            Amenities:
+            <textarea type="text" name="amenities" cols="30" rows="5"></textarea>
+          </label>
+          <button type="submit">Save Resort</button>
+        </form>
+        <%# } %>
+    </div>
+  </div>
+</div> -->
 
 <%- include('../partials/footer') %>
