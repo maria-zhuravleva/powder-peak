@@ -4,28 +4,55 @@
 </head>
 <body>
   <nav>
-    <a href="/resorts">All Resorts🗻</a>
-    <a href="/profiles">Profiles</a>
-    <% if (user) { %>
-      <a href="/auth/logout" class="right">
-        <button type="submit">Logout</button>
-      </a>
-    <% } else { %>
-      <div 
-        id="g_id_onload"
-        data-client_id="<%= googleClientID %>"
-        data-login_uri="/auth/google"
-        data-auto_prompt="false"
-        data-prompt_parent_id="g_id_onload"
-      ></div>
-      <div 
-        class="g_id_signin right"
-        data-type="standard"
-        data-size="large"
-        data-theme="outline"
-        data-text="sign_in_with"
-        data-shape="rectangular"
-        data-logo_alignment="left"
-      ></div>
-    <% } %>
+    <div class="top-bar">
+      <div class="logo">logo</div>
+      <div class="menu">
+        <ul>
+          <li>
+            <a href="/">about</a>
+          </li>
+          <li>
+            <a href="/">home</a>
+          </li>
+          <li>
+            <a href="/resorts">resorts</a>
+          </li>
+          <li>
+            <a href="/profiles">profile</a>
+          </li>
+          <li>
+            <% if (user) { %>
+              <a href="/auth/logout" class="right">
+                <button type="submit">Logout</button>
+              </a>
+            <% } else { %>
+              <div 
+                id="g_id_onload"
+                data-client_id="<%= googleClientID %>"
+                data-login_uri="/auth/google"
+                data-auto_prompt="false"
+                data-prompt_parent_id="g_id_onload"
+              ></div>
+              <div 
+                class="g_id_signin right"
+                data-type="standard"
+                data-size="large"
+                data-theme="outline"
+                data-text="sign_in_with"
+                data-shape="rectangular"
+                data-logo_alignment="left"
+              ></div>
+            <% } %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="banner">
+      <div class="banner-text">
+        <div class="banner-text-items">
+          <h2>Banner Text Heading</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem consequatur atque, tenetur, veniam deleniti nobis sed eveniet laudantium tempore sint modi. Architecto temporibus voluptatibus, nam corrupti modi voluptatum reprehenderit rerum.</p>
+        </div>
+      </div>      
+    </div>
   </nav>

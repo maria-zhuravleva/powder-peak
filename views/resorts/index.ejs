@@ -1,5 +1,5 @@
 <%- include('../partials/html-head') %>
-<!-- <link rel="stylesheet" href="/stylesheets/movies/index.css" /> -->
+<link rel="stylesheet" href="../../public/stylesheets/resorts/index.css" />
 <%- include('../partials/nav') %>
 
 <h1>All Resorts🗻</h1>
@@ -11,8 +11,8 @@
       <tr>
         <th>Name</th>
         <th>Location</th>
-        <th>Difficulty Level</th>
-        <th>Amenities</th>
+        <!-- <th>Difficulty Level</th>
+        <th>Amenities</th> -->
       </tr>
     </thead>
     <tbody>
@@ -22,8 +22,8 @@
             <%= resort.name %>
           </a></td>
           <td><%= resort.location %></td>
-          <td><%= resort.difficultyLevel %></td>
-          <td><%= resort.amenities.join(', ') %></td> 
+          <!-- <td><%# resort.difficultyLevel %></td>
+          <td><%# resort.amenities.join(', ') %></td>   -->
           <td><a href="/resorts/<%= resort._id %>">DETAILS</a></td>
         </tr>
         <% }) %>

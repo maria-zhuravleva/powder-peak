@@ -1,0 +1,6 @@
+.banner {
+  background: url('img/clouds-banner.jpg');
+  width: 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+}

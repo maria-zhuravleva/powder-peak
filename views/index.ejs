@@ -2,15 +2,41 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-  <% if (user?.profile.avatar) { %>
+  <div class="main-content">
+    <div class="main1">
+      <h2>Main Heading One</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem ipsa reprehenderit, excepturi quaerat suscipit quasi eligendi? Tempora esse quam quo officia. Eaque itaque nostrum similique perspiciatis nemo totam nisi mollitia!</p>
+    </div>
+    <div class="main1">
+      <h2>Main Heading Two</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem ipsa reprehenderit, excepturi quaerat suscipit quasi eligendi? Tempora esse quam quo officia. Eaque itaque nostrum similique perspiciatis nemo totam nisi mollitia!</p>
+    </div>
+    <div class="main1">
+      <h2>Main Heading Three</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem ipsa reprehenderit, excepturi quaerat suscipit quasi eligendi? Tempora esse quam quo officia. Eaque itaque nostrum similique perspiciatis nemo totam nisi mollitia!</p>
+    </div>
+  </div>
+  <div class="contact">
+    <div class="contact-text">
+      <div class="contact-items">
+        <h2>Contact Us</h2>
+        <input type="text" placeholder="Your name ...">
+        <input type="text" placeholder="Your email ...">
+        <textarea cols="30" rows="5" placeholder="Your message..."></textarea>
+        <a href="http://#">Submit</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- <h1>hello, <%# user ? user.profile.name : "friend" %></h1>
+  <%# if (user?.profile.avatar) { %>
     <div>
       <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
+        src="<%# user.profile.avatar %>"
+        alt="<%# user.profile.name %> avatar"
       />
     </div>
-  <% } %>
+  <%# } %> -->
 </main>
 
 <%- include('./partials/footer') %>
