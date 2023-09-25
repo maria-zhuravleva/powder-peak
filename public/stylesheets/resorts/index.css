@@ -1,6 +1,208 @@
-.banner {
+/* .banner {
   background: url('../img/mountains-banner.jpg');
   width: 100%;
   -webkit-background-size: cover;
   background-size: cover;
+} */
+
+
+/* <div class="main-content">
+<h1>Resort List</h1>
+<div class="wrapper">
+  <% resorts.forEach(resort => { %>
+    <a href="/resorts/<%= resort._id %>">
+      <div class="resorts" data-resort-id="<%= resort._id %>">
+        <div class="info">
+          <h2><%= resort.name %></h2>
+          <a href="/resorts/<%= resort._id %>" class="btn">DETAILS</a>
+        </div>
+      </div>
+    </a>
+  <% }) %>
+</div>
+</div> */
+
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+.main-content {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 16px;
+  padding: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.resorts {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  padding: 16px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.resorts:nth-child(1):before {
+  background-image: url('../img/resorts-list-three.jpg');
+}
+
+.resorts:nth-child(2):before {
+  background-image: url('../img/resorts-list-eleven.jpg');
+}
+
+.resorts:nth-child(3):before {
+  background-image: url('../img/resorts-list-eighteen.jpg');
+}
+
+.resorts:nth-child(4):before {
+  background-image: url('../img/resorts-list-one.jpg');
+}
+
+.resorts:nth-child(5):before {
+  background-image: url('../img/resorts-list-new-two.jpg');
+}
+
+.resorts:nth-child(6):before {
+  background-image: url('../img/resorts-list-new-four.jpg');
+}
+
+.resorts:nth-child(7):before {
+  background-image: url('../img/resorts-list-another.jpg');
+}
+
+.resorts:nth-child(8):before {
+  background-image: url('../img/resorts-list-other.jpg');
+}
+
+div.resorts a {
+  text-decoration: none;
+}
+
+.resorts:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  transition: all .5s ease;
+  pointer-events: none;
+  height: 180px;
+  /* width: 2000px; */
+}
+
+.resorts:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  transition: all .5s ease;
+  pointer-events: none;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(255, 255, 255, 0.3));
+  transform: translateY(-50%);
+}
+
+.info {
+  position: relative;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 16px;
+  transition: transform .5s ease;
+  z-index: 1;
+}
+
+.info h2 {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color:#fff;
+  border-bottom: white solid 1px;
+  padding: 3px 35px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 10px 25px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: transparent;
+  border-bottom: white solid 1px;
+  border-top: white solid 1px;
+  margin-top: 45px;
+}
+
+.resorts:after {
+  transform: translateY(0);
+}
+
+.info {
+  transform: translateY(calc(100% - 50px));
+}
+
+.resorts:hover:before {
+  transform: translateY(-4%);
+}
+
+.resorts:hover:after {
+  transform: translateY(-50%);
+}
+
+.resorts:hover .info {
+  transform: translateY(0);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; 
+}
+
+#new-resort-btn {
+  /* font-family: ; */
+  cursor: pointer;
+  font-size: 15px;
+  color: black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: none; 
+  border-right: none;
+  width: 150px;
+  height: 50px;
+  outline: none;
+  background: transparent;
+  text-transform: uppercase;
 }

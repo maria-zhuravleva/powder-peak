@@ -152,67 +152,6 @@
   text-align: center;
 }
 
-/* .contact-items {
-  display: flex;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.contact {
-  background: url('img/clouds-banner.jpg');
-  padding: 80px 0;
-  position: relative;
-  z-index: 1;
-}
-
-.contact:before {
-  position: absolute;
-  content: '';
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.contact-items h2 {
-  color: #fff;
-  font-size: 40px;
-  margin-top: 18px;
-}
-
-.contact-items input[type="text"] {
-  border-radius: 10px;
-  margin-bottom: 15px;
-  padding: 15px;
-  width: 30%;
-}
-
-.contact-items textarea {
-  border-radius: 10px;
-  height: 150px;
-  padding: 15px;
-  width: 30%;
-}
-
-.contact-items a {
-  background: #000;
-  color: #fff;
-  display: block;
-  font-size: 20px;
-  margin-top: 25px;
-  padding: 15px 50px;
-  text-decoration: none;
-  text-transform: uppercase;
-} */
 
 @media all and (max-width:500px) {
   .top-bar{
