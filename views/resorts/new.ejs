@@ -6,9 +6,9 @@
     <div class="logo">logo</div>
     <div class="menu">
       <ul>
-        <li>
+        <!-- <li>
           <a href="/">about</a>
-        </li>
+        </li> -->
         <li>
           <a href="/">home</a>
         </li>
@@ -81,6 +81,9 @@
 
 <div class="form-container">
   <div class="add-new-resort-form">
+    <a href="/resorts"> 
+      <img id="arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAPBJREFUaEPtmFEKwzAMQ9WbbSfbdrMdbQSWn8JGbcs2BvWrH3bQk1JS58Dw5xiuHwLoTlAJKIGgA9pCQQPD7UogbGFwASVgMPAG4G2ov1RalcATwAPAC8B6pz0VAFv8Fk2FyAY4i98Qd9Z2ygT4JX5EAiXiV5wZCZSJzwAoFc8GKBfPBGgRzwJoE88AaBUvgO+x2poC6xxog2ABrDBaIJgALRBsgHKIDIBSiCyAMohMgH8QIwaaPX2NHinPENRpjPErYbldGH2tYgE11WZ/xCYxnmIBeFxj9igBppuetZSAxzVmjxJguulZSwl4XGP2fADpLS4xYqF4ZwAAAABJRU5ErkJggg=="/>
+    </a>
     <div class="add-new-resort-form-items">
       <% if (user) { %>
         <form action="/resorts" method="POST" id="new-form">
@@ -101,7 +104,7 @@
             <div class="label">Amenities:</div>
             <textarea type="text" name="amenities" cols="30" rows="5" id="amenities-input"></textarea>
           </div>
-          <button type="submit">Add 🗻</button>
+          <button type="submit" id="save-btn">Save</button>
         </form>
       <% } %>
     </div>

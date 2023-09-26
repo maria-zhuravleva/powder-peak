@@ -5,30 +5,18 @@
   background-size: cover;
 } */
 
-
-/* <div class="main-content">
-<h1>Resort List</h1>
-<div class="wrapper">
-  <% resorts.forEach(resort => { %>
-    <a href="/resorts/<%= resort._id %>">
-      <div class="resorts" data-resort-id="<%= resort._id %>">
-        <div class="info">
-          <h2><%= resort.name %></h2>
-          <a href="/resorts/<%= resort._id %>" class="btn">DETAILS</a>
-        </div>
-      </div>
-    </a>
-  <% }) %>
-</div>
-</div> */
-
-
 * {
   box-sizing: border-box;
 }
 
 html, body {
   height: 100%;
+  font-size: 15px;
+}
+
+.main-content h1 {
+  font-weight: normal;
+  border-bottom: black solid 1px;
 }
 
 .main-content {
