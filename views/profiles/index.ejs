@@ -1,6 +1,53 @@
 <%- include('../partials/html-head') %>
 <!-- <link rel="stylesheet" href="/stylesheets/profiles/index.css"> -->
-<%- include('../partials/nav') %>
+<%# include('../partials/nav') %>
+<nav>
+  <div class="top-bar">
+    <div class="logo">logo</div>
+    <div class="menu">
+      <ul>
+        <li>
+          <a href="/">home</a>
+        </li>
+        <li>
+          <a href="/resorts">resorts</a>
+        </li>
+        <li>
+          <a href="/profiles">profile</a>
+        </li>
+        <li>
+          <% if (user) { %>
+            <a href="/auth/logout" class="right">Logout
+              <!-- <button type="submit">Logout</button> -->
+            </a>
+          <% } else { %>
+            <div class="google-login">
+              <div 
+                id="g_id_onload"
+                data-client_id="<%= googleClientID %>"
+                data-login_uri="/auth/google"
+                data-auto_prompt="false"
+                data-prompt_parent_id="g_id_onload"
+                data-login_hint=""
+              ></div>
+              <div 
+                id="google-signin-button"
+                class="g_id_signin right"
+                data-type="standard"
+                data-size="large"
+                data-theme="outline"
+                data-text="sign_in_with"
+                data-shape="rectangular"
+                data-logo_alignment="left"
+              ></div>
+            </div>
+          <% } %>
+        </li>
+        <div class="line"></div>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <main>
   <div class="card-container">

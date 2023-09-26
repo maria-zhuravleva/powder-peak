@@ -32,9 +32,12 @@ function show(req, res) {
 }
 
 function renderReviews(req, res){
-  const profileId = req.params.profileId
+  // const profileId = req.params.profileId
+  const profileId = req.user.profile._id
+  // console.log(profileId)
   Resort.find({ creator: profileId })
     .then(resorts => {
+      // console.log('this is resorts:', resorts)
       Profile.findById(profileId)
         .then(profile => {
           res.render('profiles/reviews', {

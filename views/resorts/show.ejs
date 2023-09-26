@@ -86,20 +86,20 @@
   </div>
 
   <section class="button-section">
-    <a href="/resorts/<%= resort._id %>/edit">
-      <button class="btn">Edit Resort</button>
-    </a>
-    <% if (user) { %>
-      <form action="/resorts/<%= resort._id %>/favoriteResorts" method="POST">
-        <button class="btn" type="submit">Add to Favorite</button>
+    <form action="/resorts/<%= resort._id %>/favoriteResorts" method="POST">
+      <button class="btn" type="submit">Add to Favorite</button>
+    </form>
+    <% if (resort.creator.equals(user?.profile._id)) { %>
+      <a href="/resorts/<%= resort._id %>/edit">
+        <button class="btn">Edit Resort</button>
+      </a>
+      <form 
+      action="/resorts/<%= resort._id %>?_method=DELETE" 
+      method="POST"
+      >
+        <button class="btn" type="submit">Delete Resort</button>
       </form>
     <% } %>
-    <form 
-    action="/resorts/<%= resort._id %>?_method=DELETE" 
-    method="POST"
-    >
-      <button class="btn" type="submit">Delete Resort</button>
-    </form>
   </section>
 
   <section class="reviews-section">
@@ -111,7 +111,7 @@
         method="POST"
       >
         <label for="content-textarea">Review:</label>
-        <textarea name="content" id="content-textarea" cols="30" rows="5"></textarea>
+        <textarea name="content" id="content-textarea" cols="30" rows="5" required></textarea>
         <label for="rating-select">Rating:</label>
         <select name="rating" id="rating-select">
           <option value="1">1</option>
