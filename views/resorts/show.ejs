@@ -1,6 +1,217 @@
 <%- include('../partials/html-head') %>
-<!-- <link rel="stylesheet" href="/stylesheets/movies/show.css" /> -->
-<%- include('../partials/nav') %>
+<link rel="stylesheet" href="/stylesheets/resorts/show.css" />
+<%# include('../partials/nav') %>
+<nav>
+  <div class="top-bar">
+    <div class="logo">logo</div>
+    <div class="menu">
+      <ul>
+        <li>
+          <a href="/">home</a>
+        </li>
+        <li>
+          <a href="/resorts">resorts</a>
+        </li>
+        <li>
+          <a href="/profiles">profile</a>
+        </li>
+        <li>
+          <% if (user) { %>
+            <a href="/auth/logout" class="right">Logout
+              <!-- <button type="submit">Logout</button> -->
+            </a>
+          <% } else { %>
+            <div class="google-login">
+              <div 
+                id="g_id_onload"
+                data-client_id="<%= googleClientID %>"
+                data-login_uri="/auth/google"
+                data-auto_prompt="false"
+                data-prompt_parent_id="g_id_onload"
+                data-login_hint=""
+              ></div>
+              <div 
+                id="google-signin-button"
+                class="g_id_signin right"
+                data-type="standard"
+                data-size="large"
+                data-theme="outline"
+                data-text="sign_in_with"
+                data-shape="rectangular"
+                data-logo_alignment="left"
+              ></div>
+            </div>
+          <% } %>
+        </li>
+        <div class="line"></div>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <a href="/resorts"> 
+    <img id="arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAPBJREFUaEPtmFEKwzAMQ9WbbSfbdrMdbQSWn8JGbcs2BvWrH3bQk1JS58Dw5xiuHwLoTlAJKIGgA9pCQQPD7UogbGFwASVgMPAG4G2ov1RalcATwAPAC8B6pz0VAFv8Fk2FyAY4i98Qd9Z2ygT4JX5EAiXiV5wZCZSJzwAoFc8GKBfPBGgRzwJoE88AaBUvgO+x2poC6xxog2ABrDBaIJgALRBsgHKIDIBSiCyAMohMgH8QIwaaPX2NHinPENRpjPErYbldGH2tYgE11WZ/xCYxnmIBeFxj9igBppuetZSAxzVmjxJguulZSwl4XGP2fADpLS4xYqF4ZwAAAABJRU5ErkJggg==" width="30px" height="30px"/>
+  </a>
+  <!-- <h1><%= title %></h1> -->
+  <div class="section-container">
+    <div class="columns image">
+      <img src="/stylesheets/img/resorts-list-three.jpg" alt="Trees" width="400px" height="500px">
+    </div>
+
+    <div class="columns content">
+      <div class="content-container">
+        <h1><%= resort.name %></h1>
+        <h3>Location: <%= resort.location %></h3>
+        <br>
+        <br>
+        <h4>Difficulty Level: </h4>
+        <p><%= resort.difficultyLevel %></p>
+        <br>
+      </div>
+    </div>
+  </div>
+  
+  <div class="section-container">
+    <div class="columns content">
+      <div class="content-container">
+        <h4>Amenities</h4>
+        <br>
+        <p><%= resort.amenities.join(', ') %></p>
+      </div>
+    </div>
+    <div class="columns image">
+      <img src="/stylesheets/img/aspen1.jpg" alt="Snowboarder" width="330px" height="500px">
+    </div>
+  </div>
+
+  <section class="button-section">
+    <a href="/resorts/<%= resort._id %>/edit">
+      <button class="btn">Edit Resort</button>
+    </a>
+    <% if (user) { %>
+      <form action="/resorts/<%= resort._id %>/favoriteResorts" method="POST">
+        <button class="btn" type="submit">Add to Favorite</button>
+      </form>
+    <% } %>
+    <form 
+    action="/resorts/<%= resort._id %>?_method=DELETE" 
+    method="POST"
+    >
+      <button class="btn" type="submit">Delete Resort</button>
+    </form>
+  </section>
+
+  <section class="reviews-section">
+    <h2>Reviews</h2>
+    <% if (user) { %>
+      <form 
+        id="add-review-form"
+        action="/resorts/<%= resort._id %>/reviews"
+        method="POST"
+      >
+        <label for="content-textarea">Review:</label>
+        <textarea name="content" id="content-textarea" cols="30" rows="5"></textarea>
+        <label for="rating-select">Rating:</label>
+        <select name="rating" id="rating-select">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5" selected>5</option>
+        </select>
+        <button class="btn" type="submit">Add Review</button>
+      </form>
+      <% } %>
+      <p id="separator"></p>
+  </section>
+
+  <section class="reviews">
+    <% if (resort.reviews.length) { %>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Review</th>
+              <th>Rating</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% resort.reviews?.forEach(function(review) { %>
+              <tr>
+                <td>
+                  <p>
+                    <%= review.commenter.name %>
+                    left a review:
+                  </p>
+                </td>
+                <td><%= review.content %></td>
+                <td><%= review.rating %></td>
+                <td><%= review.createdAt.toLocaleDateString() %></td>
+                <td class="actions">
+                  <% if (review.commenter.equals(user?.profile._id)) { %>
+                    <div class="action-buttons">
+                      <a href="/resorts/<%= resort._id %>/reviews/<%= review._id %>/edit">
+                        <button class="btn">Edit Review</button>
+                      </a>
+                      <form 
+                      action="/resorts/<%= resort._id %>/reviews/<%= review._id %>?_method=DELETE" 
+                      method="POST"
+                      class="inline"
+                      >
+                        <button class="btn" type="submit">Delete Review</button>
+                      </form>
+                    </div>
+                  <% } %>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    <% } else { %>
+      <h3>No Reviews Yet</h3>
+    <% } %>
+  </section>
+
+</main>
+
+
+<!-- <div class="section-container">
+
+  <div class="columns image">
+    <img src="/stylesheets/img/resorts-list-three.jpg" alt="Trees" width="400px" height="500px">
+  </div>
+  
+  <div class="columns content">
+    <div class="content-container">
+      <h1>Resort name</h1>
+      <h3>Location</h3>
+      <br>
+      <h5>Difficulty Level</h5>
+      <br>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et ab repellat illum quisquam laborum? Possimus quis unde magnam, eos deserunt quae alias quidem, nostrum hic odio ipsa ea. Cum, consectetur?</p>
+    </div>
+  </div>
+  
+</div>
+
+<div class="section-container">
+  
+  <div class="columns content">
+    <div class="content-container">
+      <h5>Amenities</h5>
+      <br>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et ab repellat illum quisquam laborum? Possimus quis unde magnam, eos deserunt quae alias quidem, nostrum hic odio ipsa ea. Cum, consectetur?</p>
+    </div>
+  </div>
+  <div class="columns image">
+    <img src="/stylesheets/img/aspen1.jpg" alt="Snowboarder" width="330px" height="500px">
+  </div>
+
+</div>
 
 <main>
   <a href="/resorts"> 
@@ -101,6 +312,38 @@
       <h3>No Reviews Yet</h3>
     <% } %>
   </section>
-</main>
+</main> -->
   
 <%- include('../partials/footer') %>
+
+<!-- <section class="resorts" id="resorts">
+  <h1 class="heading">Resort</h1>
+  <div class="box-container">
+    <div class="box">
+      <p class="location">Location</p>
+      <div class="image">
+        <img src="/stylesheets/img/aspen1.jpg" alt="Snowboarder">
+        <div class="icons">
+          <a href="#" class="fas fa-heart">Add to Favorite</a>
+        </div> 
+      </div>
+      <div class="content">
+        <h3>Difficulty Level</h3>
+      </div>
+    </div>
+  </div>
+  <div class="box-container">
+    <div class="box">
+      <p>Location</p>
+      <div class="image">
+        <img src="/stylesheets/img/resorts-list-three.jpg" alt="Snowboarder">
+        <div class="icons">
+          <a href="#" class="fas fa-heart">Add to Favorite</a>
+        </div> 
+      </div>
+      <div class="content">
+        <h3>Difficulty Level</h3>
+      </div>
+    </div>
+  </div>
+</section> -->

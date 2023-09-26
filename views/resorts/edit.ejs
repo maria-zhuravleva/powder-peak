@@ -1,15 +1,101 @@
 <%- include('../partials/html-head') %>
-<!-- <link rel="stylesheet" href="/stylesheets/resorts/edit.css" /> -->
-<%- include('../partials/nav') %>
+<link rel="stylesheet" href="/stylesheets/resorts/new.css" />
+<%# include('../partials/nav') %>
 
-<section>
-  <% if (user) { %>
-    <h2>Edit a Resort!</h2>
-    <form 
-    id="edit-form" 
-    action="/resorts/<%= resort._id %>?_method=PUT" 
-    method="POST"
-    >
+<nav>
+  <div class="top-bar">
+    <div class="logo">logo</div>
+    <div class="menu">
+      <ul>
+        <li>
+          <a href="/">home</a>
+        </li>
+        <li>
+          <a href="/resorts">resorts</a>
+        </li>
+        <li>
+          <a href="/profiles">profile</a>
+        </li>
+        <li>
+          <% if (user) { %>
+            <a href="/auth/logout" class="right">Logout
+              <!-- <button type="submit">Logout</button> -->
+            </a>
+          <% } else { %>
+            <div class="google-login">
+              <div 
+                id="g_id_onload"
+                data-client_id="<%= googleClientID %>"
+                data-login_uri="/auth/google"
+                data-auto_prompt="false"
+                data-prompt_parent_id="g_id_onload"
+                data-login_hint=""
+              ></div>
+              <div 
+                id="google-signin-button"
+                class="g_id_signin right"
+                data-type="standard"
+                data-size="large"
+                data-theme="outline"
+                data-text="sign_in_with"
+                data-shape="rectangular"
+                data-logo_alignment="left"
+              ></div>
+            </div>
+          <% } %>
+        </li>
+        <div class="line"></div>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="form-container">
+  <div class="add-new-resort-form">
+    <a href="/resorts"> 
+      <img id="arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAPBJREFUaEPtmFEKwzAMQ9WbbSfbdrMdbQSWn8JGbcs2BvWrH3bQk1JS58Dw5xiuHwLoTlAJKIGgA9pCQQPD7UogbGFwASVgMPAG4G2ov1RalcATwAPAC8B6pz0VAFv8Fk2FyAY4i98Qd9Z2ygT4JX5EAiXiV5wZCZSJzwAoFc8GKBfPBGgRzwJoE88AaBUvgO+x2poC6xxog2ABrDBaIJgALRBsgHKIDIBSiCyAMohMgH8QIwaaPX2NHinPENRpjPErYbldGH2tYgE11WZ/xCYxnmIBeFxj9igBppuetZSAxzVmjxJguulZSwl4XGP2fADpLS4xYqF4ZwAAAABJRU5ErkJggg=="/>
+    </a>
+    <div class="add-new-resort-form-items">
+      <% if (user) { %>
+        <form 
+        id="edit-form" 
+        action="/resorts/<%= resort._id %>?_method=PUT" 
+        method="POST"
+        >
+          <h2>Edit Resort</h2>
+          <div class="form-item">
+            <div class="label">Name:</div>
+            <input type="text" name="name" value="<%= resort.name %>">
+          </div>
+          <div class="form-item">
+            <div class="label">Location:</div>
+            <input type="text" name="location" value="<%= resort.location %>">
+          </div>
+          <div class="form-item">
+            <div class="label">Difficulty Level:</div>
+            <input type="text" name="difficultyLevel" value="<%= resort.difficultyLevel %>">            
+          </div>
+          <div class="form-item">
+            <div class="label">Amenities:</div>
+            <textarea type="text" name="amenities" cols="30" rows="5" id="amenities-input"><%= resort.amenities.join(', ') %></textarea>
+          </div>
+          <button type="submit" id="save-btn">Save</button>
+        </form>
+      <% } %>   
+    </div>
+  </div>
+</div>  
+  
+  <%- include('../partials/footer') %>
+  
+  <!-- <section>
+    <% if (user) { %>
+      <h2>Edit a Resort!</h2>
+      <form 
+      id="edit-form" 
+      action="/resorts/<%= resort._id %>?_method=PUT" 
+      method="POST"
+      >
       <label for="name-input">
         Name: 
         <input type="text" name="name" value="<%= resort.name %>">
@@ -28,7 +114,63 @@
       </label>
       <button type="submit">Save 🗻</button>
     </form>
-  <% } %>
-</section>
+    <% } %>
+  </section> -->
 
-<%- include('../partials/footer') %>
+  <!--     
+    <% if (user) { %>
+      <form action="/resorts" method="POST" id="new-form">
+        <h2>Add New Resort</h2>
+        <div class="form-item">
+          <div class="label">Name:</div>
+          <input type="text" name="name" autocomplete="off" id="name-input">
+        </div>
+        <div class="form-item">
+          <div class="label">Location:</div>
+          <input type="text" name="location" id="location-input">
+        </div>
+        <div class="form-item">
+          <div class="label">Difficulty Level:</div>
+          <input type="text" name="difficultyLevel" id="difficultyLevel-input">
+        </div>
+        <div class="form-item">
+          <div class="label">Amenities:</div>
+          <textarea type="text" name="amenities" cols="30" rows="5" id="amenities-input"></textarea>
+        </div>
+        <button type="submit" id="save-btn">Save</button>
+      </form>
+      <% } %>
+    </div>
+  </div> -->
+
+  <!-- <div class="form-container">
+    <div class="add-new-resort-form">
+      <a href="/resorts"> 
+        <img id="arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAPBJREFUaEPtmFEKwzAMQ9WbbSfbdrMdbQSWn8JGbcs2BvWrH3bQk1JS58Dw5xiuHwLoTlAJKIGgA9pCQQPD7UogbGFwASVgMPAG4G2ov1RalcATwAPAC8B6pz0VAFv8Fk2FyAY4i98Qd9Z2ygT4JX5EAiXiV5wZCZSJzwAoFc8GKBfPBGgRzwJoE88AaBUvgO+x2poC6xxog2ABrDBaIJgALRBsgHKIDIBSiCyAMohMgH8QIwaaPX2NHinPENRpjPErYbldGH2tYgE11WZ/xCYxnmIBeFxj9igBppuetZSAxzVmjxJguulZSwl4XGP2fADpLS4xYqF4ZwAAAABJRU5ErkJggg=="/>
+      </a>
+      <div class="add-new-resort-form-items">
+        <% if (user) { %>
+          <form action="/resorts" method="POST" id="new-form">
+            <h2>Add New Resort</h2>
+            <div class="form-item">
+              <div class="label">Name:</div>
+              <input type="text" name="name" autocomplete="off" id="name-input">
+            </div>
+            <div class="form-item">
+              <div class="label">Location:</div>
+              <input type="text" name="location" id="location-input">
+            </div>
+            <div class="form-item">
+              <div class="label">Difficulty Level:</div>
+              <input type="text" name="difficultyLevel" id="difficultyLevel-input">
+            </div>
+            <div class="form-item">
+              <div class="label">Amenities:</div>
+              <textarea type="text" name="amenities" cols="30" rows="5" id="amenities-input"></textarea>
+            </div>
+            <button type="submit" id="save-btn">Save</button>
+          </form>
+        <% } %>
+      </div>
+    </div>
+  </div> -->

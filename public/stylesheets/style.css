@@ -4,7 +4,7 @@
 }
 
 .banner {
-  background: url('img/clouds-banner.jpg');
+  background: url('img/clouds-bw.jpg');
   width: 100%;
   -webkit-background-size: cover;
   background-size: cover;
@@ -88,10 +88,6 @@
 .menu ul li:hover:nth-of-type(4) ~ .line {
   left: 78%;
 } 
-
-/* .menu ul li:hover:nth-of-type(5) ~ .line {
-  left: 90%;
-}  */
 
 .menu ul li:hover .line {
   transform: scaleX(1);
