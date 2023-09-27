@@ -17,8 +17,6 @@
   left: 0;
 }
 
-
-
 #arrow {
   position: absolute;
   top: 10px;
@@ -68,4 +66,70 @@ main {
 h1 {
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+@media screen and (max-width: 414px) and (max-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+  .menu ul li a {
+    font-size: 10px;
+  }
+  
+  .menu ul {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  .menu ul li {
+    padding: 0;
+    margin-bottom: 15px;
+  }
+  
+  .menu ul li a button {
+    padding: 8px 16px; 
+    font-size: 10px;
+  }
+  
+  div.line {
+    transform: scaleX(0); 
+    background: #FFFFFF;
+  }
+
+  main {
+    text-align: center;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+
+  .go-back {
+    text-align: left;
+    top: 20px;
+    left: 10px;
+  }
+
+  .go-back p {
+    font-size: 12px;
+    position: absolute;
+    top: 15px;
+    left: 40px;
+    width: 100px;
+    height: 30px;
+  }
+
+  #arrow img {
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+  }
+
+  .line {
+    width: 50px;
+  }
 }
