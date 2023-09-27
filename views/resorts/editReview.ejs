@@ -4,7 +4,7 @@
 
 <nav>
   <div class="top-bar">
-    <div class="logo">logo</div>
+    <div class="logo">pd.</div>
     <div class="menu">
       <ul>
         <li>
@@ -61,7 +61,7 @@
           action="/resorts/<%= resort._id %>/reviews/<%= review._id %>?_method=PUT"
           method="POST"
         >
-          <h1>Edit your review</h1>
+          <h1 id="edit-review-heading">Edit your review</h1>
           <div class="form-item">
             <div class="label">Content:</div>
               <textarea
@@ -76,11 +76,11 @@
           <div class="form-item">
             <div class="label">Rating:</div>
             <select name="rating" id="rating-select">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5" selected>5</option>
+              <option class="rating-select-items" value="1">1</option>
+              <option class="rating-select-items" value="2">2</option>
+              <option class="rating-select-items" value="3">3</option>
+              <option class="rating-select-items" value="4">4</option>
+              <option class="rating-select-items" value="5" selected>5</option>
             </select>
           </div>
           <button type="submit" id="save-btn">Save</button>

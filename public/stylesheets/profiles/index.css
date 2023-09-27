@@ -1,0 +1,49 @@
+
+@font-face {
+  font-family: 'Graindeur';
+  src: url('graindeur-serif-display/ttf/graindeur-serif-display-graindeur-serif-display-regular-400.ttf') format('truetype');
+  font-family: 'Collingar'; 
+  src: url('collingar/ttf/collingar-collingar-400.ttf') format('truetype');
+  font-family: 'Calisga';
+  src: url('calisga/ttf/calisga-calisga-400.ttf') format('truetype');
+}
+body {
+  font-family: 'Collingar', sans-serif;
+}
+
+h2 {
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-bottom: black solid 1px;
+  padding-bottom: 5px;
+  width: 400px;
+}
+
+main {
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  margin: 10px;
+  text-align: center;
+}
+
+.card img {
+  max-width: 100%;
+}
+
+.card-title {
+  color: black;
+  text-decoration: none;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}

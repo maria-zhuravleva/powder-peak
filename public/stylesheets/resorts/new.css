@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Graindeur';
+  src: url('graindeur-serif-display/ttf/graindeur-serif-display-graindeur-serif-display-regular-400.ttf') format('truetype');
+  font-family: 'Collingar'; 
+  src: url('collingar/ttf/collingar-collingar-400.ttf') format('truetype');
+  font-family: 'Calisga';
+  src: url('calisga/ttf/calisga-calisga-400.ttf') format('truetype');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +16,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 800px;
   position: relative;
 }
 
@@ -31,8 +40,7 @@
   background: url('../img/background-bw.jpg');
   background-position: center;
   background-size: cover;
-  font-family: sans-serif;
-  margin-top: 40px;
+  margin-top: 0;
   margin: auto;
   color: #fff;
   padding: 20px 0;
@@ -42,22 +50,24 @@
   position: relative;
 }
 
-.add-new-resort-form:before {
+.add-new-resort-form::before { 
+  content: "";
+  background: rgba(0, 0, 0, 0.4); 
   position: absolute;
-  height: 100%;
-  width: 100%;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
 }
 
 .add-new-resort-form-items h2 {
+  font-family: 'Collingar', sans-serif;
   color: #fff;
   border-bottom: #fff solid 1px;
   font-size: 40px;
   margin-top: 18px;
   margin-bottom: 18px;
+  position: relative;
 }
 
 .add-new-resort-form-items input[type="text"] {
@@ -78,6 +88,7 @@
 .add-new-resort-form-items textarea {
   border: none; 
   outline: none;
+  position: relative;
   /* box-sizing: border-box;  */
 }
 
@@ -114,20 +125,33 @@ form {
   margin-bottom: 15px;
 }
 
-.label {
+.label, #rating-select, #edit-review-heading, .rating-select-items {
   color: #fff;
   font-weight: bold;
   margin-bottom: 5px;
   font-weight: normal;
+  font-family: 'Collingar', sans-serif;
+  position: relative;
+}
+
+#rating-select {
+  color: #000 !important; 
+  background-color: #fff !important;
+}
+
+.rating-select-items {
+  color: #000 !important; 
+  background-color: #fff !important;
 }
 
 #save-btn {
-  /* font-family: ; */
+  font-family: 'Collingar', sans-serif;
+  position: relative;
   cursor: pointer;
   font-size: 15px;
-  color: black;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  color: white;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
   border-left: none; 
   border-right: none;
   width: 150px;
@@ -144,6 +168,8 @@ form {
   left: 10px;
   top: 10px;
 }
+
+
 
 
 

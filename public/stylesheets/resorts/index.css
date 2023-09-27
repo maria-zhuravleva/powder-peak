@@ -5,6 +5,20 @@
   background-size: cover;
 } */
 
+@font-face {
+  font-family: 'Graindeur';
+  src: url('graindeur-serif-display/ttf/graindeur-serif-display-graindeur-serif-display-regular-400.ttf') format('truetype');
+  font-family: 'Collingar'; 
+  src: url('collingar/ttf/collingar-collingar-400.ttf') format('truetype');
+  font-family: 'Calisga';
+  src: url('calisga/ttf/calisga-calisga-400.ttf') format('truetype');
+}
+body {
+  /* font-family: 'Graindeur', sans-serif; */
+  /* font-family: 'Calisga', sans-serif; */
+  font-family: 'Collingar', sans-serif;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -16,7 +30,8 @@ html, body {
 
 .main-content h1 {
   font-weight: normal;
-  border-bottom: black solid 1px;
+  border-bottom: black solid 1px;  
+  font-family: 'Collingar', sans-serif;
 }
 
 .main-content {
@@ -83,6 +98,7 @@ html, body {
 
 div.resorts a {
   text-decoration: none;
+  font-family: 'Collingar', sans-serif;
 }
 
 .resorts:before {
@@ -180,7 +196,7 @@ div.resorts a {
 }
 
 #new-resort-btn {
-  /* font-family: ; */
+  font-family: 'Collingar', sans-serif;
   cursor: pointer;
   font-size: 15px;
   color: black;

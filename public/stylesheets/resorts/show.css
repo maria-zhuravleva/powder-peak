@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'Graindeur';
+  src: url('graindeur-serif-display/ttf/graindeur-serif-display-graindeur-serif-display-regular-400.ttf') format('truetype');
+  font-family: 'Collingar'; 
+  src: url('collingar/ttf/collingar-collingar-400.ttf') format('truetype');
+  font-family: 'Calisga';
+  src: url('calisga/ttf/calisga-calisga-400.ttf') format('truetype');
+}
+body {
+  /* font-family: 'Graindeur', sans-serif; */
+  /* font-family: 'Calisga', sans-serif; */
+  font-family: 'Collingar', sans-serif;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -65,7 +79,6 @@ body {
 }
 
 .btn {
-  /* font-family: ; */
   cursor: pointer;
   font-size: 15px;
   color: black;
