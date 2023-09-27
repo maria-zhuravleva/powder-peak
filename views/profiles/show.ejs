@@ -74,8 +74,8 @@
     >
   </div>
   <h1><%= isSelf ? "Your Profile" : profile.name %></h1>
-  <a href="/profiles/<%= profile._id%>/reviews">View Reviews</a>
-  <a href="/profiles/<%= profile._id%>/favoriteResorts">Favorite Resorts</a>
+  <a class="page-items" href="/profiles/<%= profile._id%>/reviews">View Reviews</a>
+  <a class="page-items" href="/profiles/<%= profile._id%>/favoriteResorts">Favorite Resorts</a>
 </main>
 
 <%- include('../partials/footer') %>

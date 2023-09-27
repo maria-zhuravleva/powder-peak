@@ -17,6 +17,8 @@
   left: 0;
 }
 
+
+
 #arrow {
   position: absolute;
   top: 10px;
@@ -55,7 +57,7 @@ main {
   max-width: 100%;
 }
 
-a {
+.page-items {
   display: block;
   margin-top: 10px;
   text-decoration: none;
