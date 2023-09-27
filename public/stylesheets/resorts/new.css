@@ -12,6 +12,135 @@
   padding: 0;
 }
 
+.top-bar {
+  background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  border-bottom: black solid 1px;
+}
+
+.logo {
+  color: black;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 20px;
+  padding: 18px;
+}
+
+.menu {
+  -webkit-flex: 3px;
+  -moz-flex: 3px;
+  -o-flex: 3px;
+  -ms-flex: 3px;
+  flex: 3px;  
+}
+
+.menu ul{
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  list-style: none;
+  margin-top: 30px;
+  padding: 0;
+  gap: 20px;
+  flex-flow: row-wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  position: relative;
+}
+
+.menu ul li {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 30px;
+  transition: 0.5s;
+  cursor: pointer;
+  user-select: none;
+}
+
+.menu ul li:hover {
+  color: black;
+} 
+
+.menu ul li:hover:nth-of-type(2) ~ .line {
+  left: 27%;
+} 
+
+.menu ul li:hover:nth-of-type(3) ~ .line {
+  left: 53%;
+} 
+
+.menu ul li:hover:nth-of-type(4) ~ .line {
+  left: 78%;
+} 
+
+.menu ul li:hover .line {
+  transform: scaleX(1);
+}
+
+.menu ul .line {
+  width: 20%;
+  background-color: black;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  transition: .5s;
+}
+
+.menu ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+.menu ul li a  button {
+  background: #cbdde6;
+  color: #fff;
+  font-size: 15px;
+  padding: 10px 30px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.google-login {
+  display: flex;
+  align-items: center;
+}
+
+.g_id_signin {
+  background: none;
+  border: none;
+  color: #cbdde6;
+  font-size: 15px;
+  margin-right: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  margin-left: auto; 
+}
+
+.g_id_signin:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
 .form-container {
   display: flex;
   justify-content: center;
