@@ -1,0 +1,58 @@
+main {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.review-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.review {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: left;
+  box-sizing: border-box; /* Add this */
+}
+
+.review p {
+  margin: 8px 0;
+}
+
+.go-back {
+  display: inline-block;
+}
+
+.go-back p {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  position: absolute;
+  top: 108px;
+  left: 35px;
+  width: 100px;
+  height: 30px;
+}
+
+#arrow img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 100px;
+  left: 10px;
+}
+
+.line {
+  border-bottom: black solid 1px;
+  width: 70px;
+}
+
+
+

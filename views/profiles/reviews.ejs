@@ -1,4 +1,5 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/profiles/reviews.css">
 <%# include('../partials/nav') %>
 <nav>
   <div class="top-bar">
@@ -49,18 +50,27 @@
 </nav>
 
 <main>
-  <a href="/profiles/<%= profile._id %>">Back to Profile</a>
+  <div class="go-back">
+    <a href="/profiles/<%= profile._id %>">
+      <div id="arrow">
+        <img id="arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAPBJREFUaEPtmFEKwzAMQ9WbbSfbdrMdbQSWn8JGbcs2BvWrH3bQk1JS58Dw5xiuHwLoTlAJKIGgA9pCQQPD7UogbGFwASVgMPAG4G2ov1RalcATwAPAC8B6pz0VAFv8Fk2FyAY4i98Qd9Z2ygT4JX5EAiXiV5wZCZSJzwAoFc8GKBfPBGgRzwJoE88AaBUvgO+x2poC6xxog2ABrDBaIJgALRBsgHKIDIBSiCyAMohMgH8QIwaaPX2NHinPENRpjPErYbldGH2tYgE11WZ/xCYxnmIBeFxj9igBppuetZSAxzVmjxJguulZSwl4XGP2fADpLS4xYqF4ZwAAAABJRU5ErkJggg=="/>
+      </div>
+      <p>GO BACK</p>
+    </a>
+  </div>
 
   <h1>Reviews</h1>
-  <div>
-    <p>Your reviews:</p>
+  <div class="review-container">
     <% if (resorts && resorts.length > 0) { %>
       <% resorts.forEach(resort => { %>
         <% resort.reviews.forEach(review => { %>
-          <div>
+          <div class="review">
             <p>Resort: <%= resort.name %></p>
+            <div class="line"></div>
             <p>Content: <%= review.content %></p>
+            <div class="line"></div>
             <p>Rating: <%= review.rating %></p>
+            <div class="line"></div>
           </div>
         <% }) %>
       <% }) %>
