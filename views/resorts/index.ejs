@@ -50,8 +50,9 @@
 </nav>
 
 <main>
+
   <div class="main-content">
-    <h1>Resort List</h1>
+    <h1>ALL RESORTS</h1>
     <div class="wrapper">
       <% resorts.forEach(resort => { %>
         <div class="resorts" data-resort-id="<%= resort._id %>">
@@ -60,28 +61,43 @@
               <h2><%= resort.name %></h2>
               <a href="/resorts/<%= resort._id %>" class="btn">DETAILS</a>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+  
+  <% if (user && user.profile && user.profile._id.equals(resorts[0].creator)) { %>
+    <div class="button-container">
+      <a href="/resorts/new">
+        <button type="submit" id="new-resort-btn">Add Resort</button>
+      </a>
+    </div>
+  <% } %>
+
+  <!-- with button for everyone -->
+  <!-- <div class="main-content">
+    <h1>ALL RESORTS</h1>
+    <div class="wrapper">
+      <% resorts.forEach(resort => { %>
+        <div class="resorts" data-resort-id="<%= resort._id %>">
+          <a href="/resorts/<%= resort._id %>">
+            <div class="info">
+              <h2><%= resort.name %></h2>
+              <a href="/resorts/<%= resort._id %>" class="btn">DETAILS</a>
+            </div>
+          </a>
+        </div>
       <% }) %>
     </div>
   </div>
 
-  
   <div class="button-container">
     <a 
     href="/resorts/new">
     <button type="submit" id="new-resort-btn">Add Resort</button>
     </a>
-  </div>
-
-  <!-- <% if (user.profile._id === '650e2b53d428f18bfd988a96') { %>
-    <div class="button-container">
-      <a 
-      href="/resorts/new">
-        <button type="submit" id="new-resort-btn">Add Resort</button>
-      </a>
-    </div>
-  <% } %> -->
+  </div> -->
 
 </main> 
   
