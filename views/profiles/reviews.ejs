@@ -63,21 +63,58 @@
   <div class="review-container">
     <% if (resorts && resorts.length > 0) { %>
       <% resorts.forEach(resort => { %>
-        <% resort.reviews.forEach(review => { %>
-          <div class="review">
-            <p>Resort: <%= resort.name %></p>
-            <div class="line"></div>
-            <p>Content: <%= review.content %></p>
-            <div class="line"></div>
-            <p>Rating: <%= review.rating %></p>
-            <div class="line"></div>
-          </div>
-        <% }) %>
+        <% if (resort.reviews && resort.reviews.length > 0) { %>
+          <% resort.reviews.forEach(review => { %>
+            <div class="review">
+              <p>Resort: <%= resort.name %></p>
+              <p>Content: <%= review.content %></p>
+              <p>Rating: <%= review.rating %></p>
+            </div>
+          <% }) %>
+        <% } else { %>
+          <p>No reviews found for <%= resort.name %></p>
+        <% } %>
       <% }) %>
     <% } else { %>
-      <p>No reviews found</p>
+      <p>No resorts found</p>
     <% } %>
+    
+    
   </div>
 </main>
 
 <%- include('../partials/footer') %>
+
+<!-- <%# if (resorts && resorts.length > 0) { %>
+  <%# resorts.forEach(resort => { %>
+    <%# resort.reviews.forEach(review => { %>
+      <div class="review">
+        <p>Resort: <%# resort.name %></p>
+        <div class="line"></div>
+        <p>Content: <%# review.content %></p>
+        <div class="line"></div>
+        <p>Rating: <%# review.rating %></p>
+        <div class="line"></div>
+      </div>
+    <%# }) %>
+  <%# }) %>
+<%# } else { %>
+  <p>No reviews found</p>
+<%# } %> -->
+
+<!-- <%# if (resorts && resorts.length > 0) { %>
+  <%# resorts.forEach(resort => { %>
+    <%# resort.reviews.forEach(review => { %>
+      <div class="review">
+        <p>Resort: <%# resort.name %></p>
+        <div class="line"></div>
+        <p>Content: <%# review.content %></p>
+        <div class="line"></div>
+        <p>Rating: <%# review.rating %></p>
+        <div class="line"></div>
+      </div>
+    <%# }) %>
+  <%# }) %>
+<%# } else { %>
+  <p>No reviews found</p>
+<%# } %> -->

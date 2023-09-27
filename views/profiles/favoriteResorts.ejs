@@ -73,13 +73,17 @@
               <span>Location:</span>
                 <%= resort.location %>
             </p>
-            <form 
-              action="/resorts/<%= resort._id%>/favoriteResorts/<%= favoriteResort._id %>?_method=DELETE" 
-              method="POST"
-              class="inline"
-              >
-              <button class="btn" type="submit">Remove</button>
-            </form>
+            <% if (resort.creator.equals(user?.profile._id)) { %>
+              <div class="action-buttons">
+                <form 
+                  action="/resorts/<%= resort._id%>/favoriteResorts/<%= favoriteResort._id %>?_method=DELETE" 
+                  method="POST"
+                  class="inline"
+                  >
+                  <button class="btn" type="submit">Remove</button>
+                </form>
+              </div>
+            <% } %>
           </div>
         <% }) %>
       <% }) %>

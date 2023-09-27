@@ -1,6 +1,7 @@
 import { Profile } from '../models/profile.js'
 import { Resort } from '../models/resort.js'
 
+
 function index(req, res) {
   Profile.find({})
   .then(profiles => {
@@ -31,13 +32,12 @@ function show(req, res) {
   })
 }
 
+// can see all reviews left for resort in current profile
 function renderReviews(req, res){
-  // const profileId = req.params.profileId
   const profileId = req.user.profile._id
-  // console.log(profileId)
-  Resort.find({ creator: profileId })
+
+  Resort.find({ 'reviews.commenter': profileId })
     .then(resorts => {
-      // console.log('this is resorts:', resorts)
       Profile.findById(profileId)
         .then(profile => {
           res.render('profiles/reviews', {
@@ -45,21 +45,49 @@ function renderReviews(req, res){
             profileId, 
             resorts,
             title: 'See All Reviews'
-          });
+          })
         })
         .catch(err => {
-          console.log(err);
+          console.log(err)
           res.redirect('/profiles')
-        });
+        })
     })
     .catch(err => {
-      console.log(err);
-      res.redirect('/profiles');
-    });
+      console.log(err)
+      res.redirect('/profiles')
+    })
 }
+
+// old
+// function renderReviews(req, res){
+//   const profileId = req.user.profile._id
+
+//   console.log(profileId)
+//   Resort.find({ creator: profileId })
+//     .then(resorts => {
+//       Profile.findById(profileId)
+//         .then(profile => {
+//           res.render('profiles/reviews', {
+//             profile,
+//             profileId, 
+//             resorts,
+//             title: 'See All Reviews'
+//           })
+//         })
+//         .catch(err => {
+//           console.log(err)
+//           res.redirect('/profiles')
+//         })
+//     })
+//     .catch(err => {
+//       console.log(err)
+//       res.redirect('/profiles')
+//     })
+// }
 
 function renderFavoriteResorts(req, res){
   const profileId = req.params.profileId
+
   Resort.find({ creator: profileId })
     .then(resorts => {
       Profile.findById(profileId)
@@ -69,16 +97,16 @@ function renderFavoriteResorts(req, res){
             profileId, 
             resorts,
             title: 'See Favorite Resorts'
-          });
+          })
         })
         .catch(err => {
-          console.log(err);
-          res.redirect('/profiles');
-        });
+          console.log(err)
+          res.redirect('/profiles')
+        })
     })
     .catch(err => {
-      console.log(err);
-      res.redirect('/profiles');
+      console.log(err)
+      res.redirect('/profiles')
     });
 }
 
