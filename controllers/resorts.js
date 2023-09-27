@@ -5,7 +5,7 @@ function index(req, res) {
   .then(resorts => {
     res.render('resorts/index', {
       resorts,
-      title: "🗻"
+      title: "Powder Peak"
     })
   })
   .catch(err => {
@@ -41,7 +41,7 @@ function show(req, res) {
   .then(resort => {
     res.render('resorts/show', {
       resort,
-      title: "🗻 show"
+      title: "Resort"
     })
   })
   .catch(err => {

@@ -21,7 +21,7 @@ function show(req, res) {
   .then(profile => {
     const isSelf = profile._id.equals(req.user.profile._id)
     res.render("profiles/show", {
-      title: `🗻 ${profile.name}'s profile`,
+      title: `${profile.name}'s profile`,
       profile,
       isSelf,
     })
@@ -44,7 +44,7 @@ function renderReviews(req, res){
             profile,
             profileId, 
             resorts,
-            title: 'See All Reviews'
+            title: 'Your Reviews'
           })
         })
         .catch(err => {
@@ -96,7 +96,7 @@ function renderFavoriteResorts(req, res){
             profile,
             profileId, 
             resorts,
-            title: 'See Favorite Resorts'
+            title: 'Your Favorite Resorts'
           })
         })
         .catch(err => {
