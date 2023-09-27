@@ -1,0 +1,77 @@
+main {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.resort-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.resort {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: left;
+}
+
+.resort p {
+  margin: 8px 0;
+}
+
+.go-back {
+  text-align: left;
+}
+
+.go-back a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+#arrow img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+
+.inline {
+  display: inline-block;
+}
+
+.btn {
+  cursor: pointer;
+  font-size: 15px;
+  color: black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: none; 
+  border-right: none;
+  width: 100px;
+  height: 40px;
+  outline: none;
+  background: transparent;
+  text-transform: uppercase;
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.items {
+  line-height: 30px;
+}
+
+.items span {
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: #08527a;
+}
