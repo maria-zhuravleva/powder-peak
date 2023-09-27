@@ -72,14 +72,12 @@
             </div>
           <% }) %>
         <% } else { %>
-          <p>No reviews found for <%= resort.name %></p>
+          <p id="no-reviews">No reviews found for <%= resort.name %></p>
         <% } %>
       <% }) %>
     <% } else { %>
       <p>No resorts found</p>
-    <% } %>
-    
-    
+    <% } %>   
   </div>
 </main>
 
