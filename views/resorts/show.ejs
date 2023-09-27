@@ -56,19 +56,16 @@
   <!-- <h1><%= title %></h1> -->
   <div class="section-container">
     <div class="columns image">
-      <img src="/stylesheets/img/resorts-list-three.jpg" alt="Trees" width="400px" height="500px">
+      <img src="/stylesheets/img/vail1.jpg" alt="Snowboarder" width="400px" height="500px">
     </div>
-
     <div class="columns content">
       <div class="content-container">
         <h1><%= resort.name %></h1>
         <h3>Location: <%= resort.location %></h3>
         <br>
         <br>
-        <h4>Difficulty Level: </h4>
-        <br>
-        <p><%= resort.difficultyLevel %></p>
-        <br>
+        <h4>Difficulty Level</h4>
+        <p id="difficulty-level"><%= resort.difficultyLevel %></p>
       </div>
     </div>
   </div>
@@ -77,19 +74,15 @@
     <div class="columns content">
       <div class="content-container">
         <h4>Amenities</h4>
-        <br>
         <ul>
           <% resort.amenities.forEach(amenity => { %>
             <li><%= amenity %></li>
-            <!-- <br> -->
           <% }) %>
         </ul>
       </div>
     </div>
-    <!-- <p><%# resort.amenities.join('<br>') %></p> -->
-    <!-- <p><%# resort.amenities.join(', ') %></p> -->
     <div class="columns image">
-      <img src="/stylesheets/img/aspen1.jpg" alt="Snowboarder" width="330px" height="500px">
+      <img src="/stylesheets/img/vail2.jpg" alt="Winter House" width="330px" height="500px">
     </div>
   </div>
 

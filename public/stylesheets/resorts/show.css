@@ -19,7 +19,47 @@ body {
 
 body {
   overflow-x: hidden;
-  /* font-family: ; */
+}
+
+
+.columns.content .content-container h4, p#difficulty-level {
+  text-align: center; 
+}
+h1 {
+  font-size: 80px;
+  padding-left: 20px;
+  border-left: black solid 2px;
+}
+
+h3 {
+  padding-left: 30px;
+}
+
+h4 {
+  margin-bottom: 40px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+
+ul li, p#difficulty-level {
+  line-height: 1.5; 
+  margin-bottom: 10px;
+}
+
+p#difficulty-level {
+  max-width: 500px; 
+}
+
+.columns.image img[alt="Winter House"] {
+  width: 520px; 
+  height: 350px;
 }
 
 .section-container {
