@@ -330,3 +330,53 @@ div.resorts a {
   background: transparent;
   text-transform: uppercase;
 }
+
+
+@media screen and (max-width: 414px) and (max-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+  .menu ul li a {
+    font-size: 10px;
+  }
+  
+  .menu ul {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  .menu ul li {
+    padding: 0;
+    margin-bottom: 15px;
+  }
+  
+  .menu ul li a button {
+    padding: 8px 16px; 
+    font-size: 10px;
+  }
+  
+  div.line {
+    transform: scaleX(0); 
+    background: #FFFFFF;
+  }
+
+  main {
+    text-align: center;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .line {
+    width: 50px;
+  }
+
+  .resorts .info h2 {
+    text-align: center; 
+    margin-bottom: 0px;
+  }
+}
+
