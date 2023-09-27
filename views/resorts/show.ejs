@@ -66,6 +66,7 @@
         <br>
         <br>
         <h4>Difficulty Level: </h4>
+        <br>
         <p><%= resort.difficultyLevel %></p>
         <br>
       </div>
@@ -77,9 +78,16 @@
       <div class="content-container">
         <h4>Amenities</h4>
         <br>
-        <p><%= resort.amenities.join(', ') %></p>
+        <ul>
+          <% resort.amenities.forEach(amenity => { %>
+            <li><%= amenity %></li>
+            <!-- <br> -->
+          <% }) %>
+        </ul>
       </div>
     </div>
+    <!-- <p><%# resort.amenities.join('<br>') %></p> -->
+    <!-- <p><%# resort.amenities.join(', ') %></p> -->
     <div class="columns image">
       <img src="/stylesheets/img/aspen1.jpg" alt="Snowboarder" width="330px" height="500px">
     </div>

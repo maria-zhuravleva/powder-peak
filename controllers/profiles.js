@@ -32,12 +32,13 @@ function show(req, res) {
   })
 }
 
-// can see all reviews left for resort in current profile
 function renderReviews(req, res){
   const profileId = req.user.profile._id
 
-  Resort.find({ 'reviews.commenter': profileId })
+  Resort.find({})
+    .populate('reviews.commenter')
     .then(resorts => {
+      console.log('resorts: ', resorts)
       Profile.findById(profileId)
         .then(profile => {
           res.render('profiles/reviews', {
@@ -57,6 +58,33 @@ function renderReviews(req, res){
       res.redirect('/profiles')
     })
 }
+
+// can see all reviews left for resort in current profile
+// function renderReviews(req, res){
+//   const profileId = req.user.profile._id
+
+//   Resort.find({ 'reviews.commenter': profileId })
+//     .then(resorts => {
+//       console.log('resorts: ', resorts)
+//       Profile.findById(profileId)
+//         .then(profile => {
+//           res.render('profiles/reviews', {
+//             profile,
+//             profileId, 
+//             resorts,
+//             title: 'Your Reviews'
+//           })
+//         })
+//         .catch(err => {
+//           console.log(err)
+//           res.redirect('/profiles')
+//         })
+//     })
+//     .catch(err => {
+//       console.log(err)
+//       res.redirect('/profiles')
+//     })
+// }
 
 // old
 // function renderReviews(req, res){
@@ -107,7 +135,7 @@ function renderFavoriteResorts(req, res){
     .catch(err => {
       console.log(err)
       res.redirect('/profiles')
-    });
+    })
 }
 
 

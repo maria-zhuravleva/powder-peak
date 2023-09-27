@@ -22,6 +22,8 @@ function newResort(req, res) {
 
 function create(req, res) {
   req.body.creator = req.user.profile._id
+  req.body.amenities = req.body.amenities.split(',').map(item => item.trim())
+  
   Resort.create(req.body)
   .then(resort => {
     res.redirect('/resorts')
