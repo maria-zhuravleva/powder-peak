@@ -260,6 +260,11 @@ p#difficulty-level {
   margin: 0;
 }
 
+.btn:hover {
+  background: black; 
+  color: white; 
+}
+
 .reviews-section {
   display: flex;
   flex-direction: column;
@@ -340,7 +345,7 @@ p#difficulty-level {
 }
 
 
-/* Media */
+
 @media screen and (max-width:767px) {
   .section-container {
     flex-flow: row wrap;

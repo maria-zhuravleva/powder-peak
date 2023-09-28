@@ -199,6 +199,11 @@ h1 {
   margin-bottom: 30px;
 }
 
+.btn:hover {
+  background: black; 
+  color: white; 
+}
+
 .items {
   line-height: 30px;
 }
