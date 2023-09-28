@@ -74,7 +74,7 @@
               <span>Location:</span>
                 <%= resort.location %>
             </p>
-            <% if (resort.creator.equals(user?.profile._id)) { %>
+            <% if (profile._id.equals(user?.profile._id)) { %>
               <div class="action-buttons">
                 <form 
                   action="/resorts/<%= resort._id%>/favoriteResorts/<%= resort._id %>?_method=DELETE" 

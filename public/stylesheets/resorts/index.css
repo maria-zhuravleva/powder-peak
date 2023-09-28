@@ -201,15 +201,15 @@ html, body {
 }
 
 .resorts:nth-child(4):before {
-  background-image: url('../img/resorts-list-one.jpg');
+  background-image: url('../img/aspen1.jpg');
 }
 
 .resorts:nth-child(5):before {
-  background-image: url('../img/resorts-list-new-two.jpg');
+  background-image: url('../img/resort-list-tw');
 }
 
 .resorts:nth-child(6):before {
-  background-image: url('../img/resorts-list-new-four.jpg');
+  background-image: url('../img/resorts-list-one.jpg');
 }
 
 .resorts:nth-child(7):before {
