@@ -170,6 +170,7 @@ body {
   display: -ms-flexbox;
   padding: 15%;
   position: relative;
+  margin-top: 60px;
 }
 
 .banner-text-items {
@@ -180,14 +181,24 @@ body {
 }
 
 .banner-text-items h2 {
+  color: black;
   font-size: 3em;
   margin-bottom: 20px;
-  text-transform: uppercase;
+  position: relative; 
+  top: -185px;
+  /* text-transform: uppercase; */
 }
 
 .banner-text-items p {
-  font-size: 18px;
+  color: black;
+  font-size: 15px;
   line-height: 25px;
+  text-align: center; 
+  position: relative;
+  top: 50%;
+  transform: translateY(-80%);
+  margin-bottom: 10px;
+  padding-top: 20px;
 }
 
 .main-content {
@@ -202,6 +213,16 @@ body {
   flex-flow: row wrap;
   padding: 5% 0;
 }
+
+#line-home-page {
+  border-top: solid black 1px;
+  position: absolute;
+  width: 20%;
+  top: calc(50% + 50px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 
 .main1 {
   -webkit-box-flex: 1;
@@ -233,7 +254,6 @@ main.home-page {
 
 .wrapper .carousel {
   white-space: nowrap;
-  /* cursor: pointer; */
 }
 
 .carousel img {
@@ -274,20 +294,17 @@ h3#home-page::before {
   top: -10%;
   left: -10%;
   z-index: -1;
-  /* width: 130%;
-  height: 130%;  */
-  /* background-color: rgba(136, 135, 137, 0.2); */
-  /* color: rgba(0, 0, 0, 0.3); */
 }
 
 h3#home-page {
   position: absolute;
-  top: 78%;
+  top: 85%;
   left: 52%;
   transform: translate(-50%, -50%);
   color: black;
   z-index: 1;
   text-transform: uppercase;
+  border-bottom: solid white 1px;
 }
 
 .top-bar .menu ul li a.active {
@@ -422,6 +439,7 @@ h3#home-page {
   }
   .banner-text-items h2 {
     font-size: 1.5em;
+    top: -100px;
   }
   .main-content {
     flex-direction: row;
@@ -446,6 +464,11 @@ h3#home-page {
     left: auto; 
     transform: none; 
     margin-top: 20px; 
+    margin-right: 10px;
+  }
+
+  #line-home-page {
+    top: calc(50% + 10px);
   }
 }
 
@@ -472,16 +495,3 @@ h3#home-page {
   }
 }
 
-
-@media (min-width: 1024px) {
-  .main.home-page {
-    justify-content: center; 
-    align-items: center;
-  }
-
-  h3#home-page {
-    position: absolute;
-    top: 80%;
-    left: 52%;
-  }
-}
