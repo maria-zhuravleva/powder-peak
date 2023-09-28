@@ -232,10 +232,6 @@ p#difficulty-level {
   text-align: justify;
 }
 
-/* div.columns.content {
-  max-width: 70%;
-} */
-
 .button-section {
   display: flex;
   justify-content: space-around; 
@@ -244,6 +240,7 @@ p#difficulty-level {
 }
 
 .btn {
+  font-family: 'Collingar', sans-serif;
   cursor: pointer;
   font-size: 15px;
   color: black;
@@ -366,3 +363,110 @@ p#difficulty-level {
     margin-bottom: 5px;
   }
 }
+
+@media screen and (max-width: 828px) {
+  .logo {
+    font-size: 18px;
+    padding: 16px;
+  }
+
+  .menu ul li {
+    padding-bottom: 20px;
+  }
+
+  .menu ul li a button {
+    font-size: 14px;
+    padding: 8px 24px;
+  }
+
+  .google-login {
+    margin-bottom: 10px;
+  }
+
+  .g_id_signin {
+    font-size: 14px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  .columns.content .content-container h4,
+  p#difficulty-level {
+    font-size: 10px;
+  }
+
+  h1 {
+    padding-left: 15px;
+  }
+
+  h3 {
+    padding-left: 25px;
+    font-size: 17px;
+  }
+
+  ul li,
+  p#difficulty-level {
+    margin-bottom: 8px;
+    font-size: 10px;
+  }
+
+  .columns.image img[alt="Winter House"] {
+    width: 100%;
+    height: auto;
+  }
+
+  .section-container .columns.image img {
+    width: 95%; 
+    height: auto; 
+  }
+  
+  .section-container .columns.content .content-container h1 {
+    font-size: 30px; 
+  }
+
+  .button-section {
+    flex-direction: column; 
+    align-items: center;
+    margin-bottom: 20px; 
+  }
+
+  .button-section form,
+  .button-section a {
+    margin-bottom: 10px; 
+  }
+
+  .button-section .btn {
+    font-size: 12px; 
+    padding: 8px 20px; 
+  }
+
+  .reviews-section #add-review-form {
+    max-width: 300px; 
+    margin: auto;
+  }
+
+  .reviews-section #separator {
+    width: 300px; 
+    margin: 20px auto;
+  }
+
+  .reviews table {
+    font-size: 14px; 
+  }
+
+  .reviews th,
+  .reviews td {
+    padding: 5px 5px;
+    line-height: 20px;
+  }
+
+  button.btn {
+    font-size: 12px; 
+  }
+
+  div.table-container {
+    max-width: 300px;
+  }
+}
+
