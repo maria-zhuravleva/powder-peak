@@ -234,7 +234,6 @@ div.resorts a {
   transition: all .5s ease;
   pointer-events: none;
   height: 180px;
-  /* width: 2000px; */
 }
 
 .resorts:after {
@@ -367,7 +366,7 @@ div.resorts a {
 
   h1 {
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .line {
@@ -377,6 +376,62 @@ div.resorts a {
   .resorts .info h2 {
     text-align: center; 
     margin-bottom: 0px;
+    padding-top: 0px;
   }
+
+  #new-resort-btn {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .button-container {
+    margin: 0px;
+  }
+
+  .resorts h2 {
+    font-size: 12px;
+  }
+
+  .resorts:nth-child(1):before {
+    background-image: url('../img/resorts-list-three.jpg');
+    background-size: cover;
+  }
+  
+  .resorts:nth-child(2):before {
+    background-image: url('../img/resorts-list-eleven.jpg');
+    background-size: cover;
+  }
+  
+  .resorts:nth-child(3):before {
+    background-image: url('../img/resorts-list-eighteen.jpg');
+    background-size: cover;
+  }
+  
+  .resorts:nth-child(4):before {
+    background-image: url('../img/resorts-list-one.jpg');
+    background-size: cover;
+  }
+  
+  .resorts:nth-child(5):before {
+    background-image: url('../img/resorts-list-new-two.jpg');
+    background-size: cover;
+  }
+  
+  .resorts:nth-child(6):before {
+    background-image: url('../img/resorts-list-new-four.jpg');
+    background-size: cover;
+  }
+  
+  .resorts:nth-child(7):before {
+    background-image: url('../img/resorts-list-another.jpg');
+    background-size: cover;
+  }
+  
+  .resorts:nth-child(8):before {
+    background-image: url('../img/resorts-list-other.jpg');
+    background-size: cover;
+  }
+
 }
+
 
