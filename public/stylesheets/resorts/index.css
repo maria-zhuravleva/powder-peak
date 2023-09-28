@@ -205,11 +205,11 @@ html, body {
 }
 
 .resorts:nth-child(5):before {
-  background-image: url('../img/resort-list-tw');
+  background-image: url('../img/resorts-pic-5.jpg');
 }
 
 .resorts:nth-child(6):before {
-  background-image: url('../img/resorts-list-one.jpg');
+  background-image: url('../img/resorts-list-twentyone.jpg');
 }
 
 .resorts:nth-child(7):before {
@@ -217,7 +217,7 @@ html, body {
 }
 
 .resorts:nth-child(8):before {
-  background-image: url('../img/resorts-list-other.jpg');
+  background-image: url('../img/resort-pic8.jpg');
 }
 
 div.resorts a {
