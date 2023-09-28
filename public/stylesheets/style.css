@@ -211,7 +211,7 @@ body {
   padding: 3%;
   text-align: center;
 }
-main {
+main.home-page {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -269,7 +269,7 @@ main {
   right: -23px;
 }
 
-h3::before {
+h3#home-page::before {
   content: "";
   position: absolute;
   top: -10%;
@@ -281,7 +281,7 @@ h3::before {
   /* color: rgba(0, 0, 0, 0.3); */
 }
 
-h3 {
+h3#home-page {
   position: absolute;
   top: 82%;
   left: 52%;
