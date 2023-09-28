@@ -15,7 +15,6 @@
             <a href="/resorts" class="<%= title === 'Powder Peak' ? 'active' : '' %>">resorts</a>
           </li>
           <li>
-            <!-- <a href="/profiles">profile</a> -->
             <% if (user && user.profile) { %>
               <a href="/profiles/<%= user.profile._id %>" class=<%= title === 'Profile' ? 'active' : '' %>>profile</a>
             <% } %>            
@@ -23,7 +22,6 @@
           <li>
             <% if (user) { %>
               <a href="/auth/logout" class="right">Logout
-                <!-- <button type="submit">Logout</button> -->
               </a>
             <% } else { %>
               <div class="google-login">

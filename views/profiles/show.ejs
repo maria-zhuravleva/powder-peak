@@ -1,6 +1,6 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/profiles/show.css">
-<%# include('../partials/nav') %>
+
 <nav>
   <div class="top-bar">
     <div class="logo">pd.</div>
@@ -16,12 +16,12 @@
           <% if (user && user.profile) { %>
             <a href="/profiles/<%= user.profile._id %>" class=<%= title === 'Profile' ? 'active' : '' %>>profile</a>
           <% } %>          
-          <!-- <a href="/profiles">profile</a> -->
+
         </li>
         <li>
           <% if (user) { %>
             <a href="/auth/logout" class="right">Logout
-              <!-- <button type="submit">Logout</button> -->
+
             </a>
           <% } else { %>
             <div class="google-login">
@@ -50,26 +50,10 @@
       </ul>
     </div>
   </div>
-  <!-- <div class="banner">
-    <div class="banner-text">
-      <div class="banner-text-items">
-        <h2>  POWDER PEAK</h2>
-        <p>Experience the natural beauty of pristine slopes, where every run is a brushstroke on Winter’s canvas.</p>
-      </div>
-    </div>      
-  </div> -->
 </nav>
 
 <main>
   <div class="go-back">
-    <!-- <a href="/profiles">
-      <div id="arrow">
-        <img id="arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAPBJREFUaEPtmFEKwzAMQ9WbbSfbdrMdbQSWn8JGbcs2BvWrH3bQk1JS58Dw5xiuHwLoTlAJKIGgA9pCQQPD7UogbGFwASVgMPAG4G2ov1RalcATwAPAC8B6pz0VAFv8Fk2FyAY4i98Qd9Z2ygT4JX5EAiXiV5wZCZSJzwAoFc8GKBfPBGgRzwJoE88AaBUvgO+x2poC6xxog2ABrDBaIJgALRBsgHKIDIBSiCyAMohMgH8QIwaaPX2NHinPENRpjPErYbldGH2tYgE11WZ/xCYxnmIBeFxj9igBppuetZSAxzVmjxJguulZSwl4XGP2fADpLS4xYqF4ZwAAAABJRU5ErkJggg=="/>
-      </div>
-      <p>
-        GO BACK
-      </p>
-    </a> -->
     <img 
       class="profile-avatar"
       src="<%= profile.avatar %>" 
@@ -77,22 +61,7 @@
     >
   </div>
   <h1><%= isSelf ? "Your Profile" : profile.name %></h1>
-  <!-- <a class="page-items" href="/profiles/<%= profile._id%>/reviews">View Reviews</a> -->
   <a class="page-items" href="/profiles/<%= profile._id%>/favoriteResorts">Favorite Resorts</a>
 </main>
 
 <%- include('../partials/footer') %>
-<!-- <div>
-  <p>Your reviews:</p>
-  
-  <%# if (reviews && reviews.length > 0) { %>
-    <%# reviews.forEach(review => { %>
-      <div>
-        <p>Content: <%# review.content %></p>
-        <p>Rating: <%# review.rating %></p>
-      </div>
-    <%# }) %>
-  <%# } else { %>
-    <p>No reviews found</p>
-  <%# } %>
-</div> -->

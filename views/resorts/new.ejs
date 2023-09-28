@@ -1,6 +1,6 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/resorts/new.css" />
-<%# include('../partials/nav') %>
+
 <nav>
   <div class="top-bar">
     <div class="logo">pd.</div>
@@ -13,7 +13,6 @@
           <a href="/resorts" class=<%= title === 'Powder Peak' ? 'active' : '' %>>resorts</a>
         </li>
         <li>
-          <!-- <a href="/profiles">profile</a> -->
           <% if (user && user.profile) { %>
             <a href="/profiles/<%= user.profile._id %>">profile</a>
           <% } %>          
@@ -21,7 +20,6 @@
         <li>
           <% if (user) { %>
             <a href="/auth/logout" class="right">Logout
-              <!-- <button type="submit">Logout</button> -->
             </a>
           <% } else { %>
             <div class="google-login">
@@ -51,35 +49,6 @@
     </div>
   </div>
 </nav>
-<!-- <div class="add-new-resort-form">
-  <div class="add-new-resort-form-text">
-    <div class="add-new-resort-form-items">
-      <%# if (user) { %>
-        <h2>Add New Resort</h2>
-        <form action="/resorts" method="POST" id="new-form">
-          <label for="name-input">
-            Name: 
-            <input type="text" name="name" autocomplete="off" id="name-input">
-          </label>
-          <label for="location-input">
-            Location:
-            <input type="text" name="location" id="location-input">
-          </label>
-          <label for="difficultyLevel-input">
-            Difficulty Level:
-            <input type="text" name="difficultyLevel" id="difficultyLevel-input">
-          </label>
-          <label for="amenities-input">
-            Amenities:
-            <textarea type="text" name="amenities" cols="30" rows="5" id="amenities-input"></textarea>
-          </label>
-          <button type="submit">Add 🗻</button>
-        </form>
-      <%# } %>
-    </div>
-  </div>
-</div> -->
-
 <div class="form-container">
   <div class="add-new-resort-form">
     <a href="/resorts"> 
@@ -111,65 +80,5 @@
     </div>
   </div>
 </div>
-
-
-
-
-<!-- good one -->
-<!-- <div class="add-new-resort-form">
-  <div class="add-new-resort-form-items">
-    <%# if (user) { %>
-      <form action="/resorts" method="POST" id="new-form">
-        <h2>Add New Resort</h2>
-        <label for="name-input">
-          Name: 
-          <input type="text" name="name" autocomplete="off" id="name-input">
-        </label><br>
-        <label for="location-input">
-          Location:
-          <input type="text" name="location" id="location-input">
-        </label><br>
-        <label for="difficultyLevel-input">
-          Difficulty Level:
-          <input type="text" name="difficultyLevel" id="difficultyLevel-input">
-        </label><br>
-        <label for="amenities-input">
-          Amenities:
-          <textarea type="text" name="amenities" cols="30" rows="5" id="amenities-input"></textarea>
-        </label><br>
-        <button type="submit">Add 🗻</button>
-      </form>
-    <%# } %>
-  </div>
-</div> -->
-
-<!-- <div class="contact">
-  <div class="contact-text">
-    <div class="contact-items">
-      <%# if (user) { %>
-        <h2>Add New Resort</h2>
-        <form action="/resorts" method="POST" id="new-form">
-          <label for="name-input">
-            Name: 
-            <input type="text" name="name" autocomplete="off">
-          </label>
-          <label for="location-input">
-            Location:
-            <input type="text" name="location">
-          </label>
-          <label for="difficultyLevel-input">
-            Difficulty Level:
-            <input type="text" name="difficultyLevel">
-          </label>
-          <label for="amenities-input">
-            Amenities:
-            <textarea type="text" name="amenities" cols="30" rows="5"></textarea>
-          </label>
-          <button type="submit">Save Resort</button>
-        </form>
-        <%# } %>
-    </div>
-  </div>
-</div> -->
 
 <%- include('../partials/footer') %>

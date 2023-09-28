@@ -183,21 +183,6 @@ function updateReview(req, res) {
   })
 }
 
-// function addFavoriteResort(req, res) {
-//   Profile.findById(req.user.profile._id)
-//   .then(profile => {
-//     profile.favoriteResorts.push(req.params.resortId)
-//     profile.save()
-//     .then(() => {
-//       res.redirect(`/resorts/${req.params.resortId}`)
-//     })
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect('/resorts')
-//   })
-// }
-
 function addFavoriteResort(req, res) {
   const userId = req.user.profile._id
   const resortId = req.params.resortId
@@ -225,35 +210,6 @@ function addFavoriteResort(req, res) {
     })
 }
 
-
-// function addFavoriteResort(req, res) {
-//   Resort.findById(req.params.resortId)
-//   .then(resort => {
-//     const isAlreadyFavorite = resort.favoriteResorts.some(favorite => favorite.owner.equals(req.user.profile._id))
-//     if (isAlreadyFavorite) {
-//       console.log('Redirecting because already favorite')
-//       return res.redirect(`/resorts/${resort._id}`)
-//     }
-//     req.body.owner = req.user.profile._id
-
-//     const newFavorite = {
-//       owner: req.user.profile._id,
-//       name: resort.name
-//     }
-
-//     resort.favoriteResorts.push(newFavorite)
-//     return resort.save()
-//     .then(() => {
-//       console.log('Redirecting after save')
-//       res.redirect(`/resorts/${req.params.resortId}`)
-//     })
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect('/resorts')
-//   })
-// }
-
 function deleteFavoriteResort(req, res){
   const userId = req.user.profile._id
   const favoriteResortId = req.params.favoriteResortId
@@ -279,31 +235,6 @@ function deleteFavoriteResort(req, res){
       res.redirect('/profiles')
     })
 }
-
-
-// function deleteFavoriteResort(req, res){
-//   Resort.findById(req.params.resortId)
-//   .then(resort => {
-//     const favoriteResort = resort.favoriteResorts.id(req.params.favoriteResortId)
-//     if (favoriteResort.owner.equals(req.user.profile._id)) {
-//       resort.favoriteResorts.remove(favoriteResort)
-//       resort.save()
-//       .then(() => {
-//         res.redirect(`/profiles/${req.user.profile._id}`)
-//       })
-//       .catch(err => {
-//         console.log(err)
-//         res.redirect('/profiles')
-//       })
-//     } else {
-//       throw new Error('🚫 Not authorized 🚫')
-//     }
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect('/profiles')
-//   })
-// }
 
 export {
   index,

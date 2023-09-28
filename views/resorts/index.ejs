@@ -1,6 +1,6 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" type="text/css" href="/stylesheets/resorts/index.css">
-<%# include('../partials/nav') %>
+
 <nav>
   <div class="top-bar">
     <div class="logo">pd.</div>
@@ -16,12 +16,10 @@
           <% if (user && user.profile) { %>
             <a href="/profiles/<%= user.profile._id %>">profile</a>
           <% } %>          
-          <!-- <a href="/profiles">profile</a> -->
         </li>
         <li>
           <% if (user) { %>
             <a href="/auth/logout" class="right">Logout
-              <!-- <button type="submit">Logout</button> -->
             </a>
           <% } else { %>
             <div class="google-login">
@@ -53,7 +51,6 @@
 </nav>
 
 <main>
-
   <div class="main-content">
     <h1>ALL RESORTS</h1>
     <div class="wrapper">
@@ -77,52 +74,7 @@
       </a>
     </div>
   <% } %>
-
-  <!-- with button for everyone -->
-  <!-- <div class="main-content">
-    <h1>ALL RESORTS</h1>
-    <div class="wrapper">
-      <% resorts.forEach(resort => { %>
-        <div class="resorts" data-resort-id="<%= resort._id %>">
-          <a href="/resorts/<%= resort._id %>">
-            <div class="info">
-              <h2><%= resort.name %></h2>
-              <a href="/resorts/<%= resort._id %>" class="btn">DETAILS</a>
-            </div>
-          </a>
-        </div>
-      <% }) %>
-    </div>
-  </div>
-
-  <div class="button-container">
-    <a 
-    href="/resorts/new">
-    <button type="submit" id="new-resort-btn">Add Resort</button>
-    </a>
-  </div> -->
-
 </main> 
-  
 
-  <!-- <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Location</th>
-      </tr>
-    </thead>
-    <tbody>
-      <%# resorts.forEach(resort => { %>
-        <tr>
-          <td> <a href="/resorts/<%# resort._id %>">
-            <%# resort.name %>
-          </a></td>
-          <td><%# resort.location %></td>
-          <td><a href="/resorts/<%# resort._id %>">DETAILS</a></td>
-        </tr>
-        <%# }) %>
-    </tbody>
-  </table> -->
 
 <%- include('../partials/footer') %>

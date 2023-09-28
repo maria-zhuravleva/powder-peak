@@ -1,10 +1,6 @@
 @font-face {
-  font-family: 'Graindeur';
-  src: url('graindeur-serif-display/ttf/graindeur-serif-display-graindeur-serif-display-regular-400.ttf') format('truetype');
   font-family: 'Collingar'; 
   src: url('collingar/ttf/collingar-collingar-400.ttf') format('truetype');
-  font-family: 'Calisga';
-  src: url('calisga/ttf/calisga-calisga-400.ttf') format('truetype');
 }
 
 * {
@@ -222,7 +218,6 @@
   border: none; 
   outline: none;
   position: relative;
-  /* box-sizing: border-box;  */
 }
 
 .add-new-resort-form-items a {

@@ -1,6 +1,5 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/resorts/new.css" />
-<%# include('../partials/nav') %>
 
 <nav>
   <div class="top-bar">
@@ -17,12 +16,10 @@
           <% if (user && user.profile) { %>
             <a href="/profiles/<%= user.profile._id %>">profile</a>
           <% } %>          
-          <!-- <a href="/profiles">profile</a> -->
         </li>
         <li>
           <% if (user) { %>
             <a href="/auth/logout" class="right">Logout
-              <!-- <button type="submit">Logout</button> -->
             </a>
           <% } else { %>
             <div class="google-login">
@@ -93,33 +90,5 @@
   </div>
 </div>
 
-
-<!-- <section>
-  <h1>Edit your review!</h1>
-  <form 
-    action="/resorts/<%= resort._id %>/reviews/<%= review._id %>?_method=PUT"
-    method="POST"
-  >
-    <label>
-      Content: 
-      <textarea
-        cols="30"
-        rows="5" 
-        type="text"
-        name="content" 
-        autocomplete="off"
-      ><%= review.content %></textarea>
-    </label>
-    <label for="rating-select">Rating:</label>
-    <select name="rating" id="rating-select">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select>
-    <button type="submit">Update Review</button>
-  </form>
-</section> -->
 
 <%- include('../partials/footer') %>

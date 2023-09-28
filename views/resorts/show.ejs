@@ -1,6 +1,5 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/resorts/show.css" />
-<%# include('../partials/nav') %>
 <nav>
   <div class="top-bar">
     <div class="logo">pd.</div>
@@ -16,12 +15,10 @@
           <% if (user && user.profile) { %>
             <a href="/profiles/<%= user.profile._id %>">profile</a>
           <% } %>          
-          <!-- <a href="/profiles">profile</a> -->
         </li>
         <li>
           <% if (user) { %>
             <a href="/auth/logout" class="right">Logout
-              <!-- <button type="submit">Logout</button> -->
             </a>
           <% } else { %>
             <div class="google-login">
@@ -56,7 +53,6 @@
   <a href="/resorts"> 
     <img id="arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAPBJREFUaEPtmFEKwzAMQ9WbbSfbdrMdbQSWn8JGbcs2BvWrH3bQk1JS58Dw5xiuHwLoTlAJKIGgA9pCQQPD7UogbGFwASVgMPAG4G2ov1RalcATwAPAC8B6pz0VAFv8Fk2FyAY4i98Qd9Z2ygT4JX5EAiXiV5wZCZSJzwAoFc8GKBfPBGgRzwJoE88AaBUvgO+x2poC6xxog2ABrDBaIJgALRBsgHKIDIBSiCyAMohMgH8QIwaaPX2NHinPENRpjPErYbldGH2tYgE11WZ/xCYxnmIBeFxj9igBppuetZSAxzVmjxJguulZSwl4XGP2fADpLS4xYqF4ZwAAAABJRU5ErkJggg==" width="30px" height="30px"/>
   </a>
-  <!-- <h1><%= title %></h1> -->
   <div class="section-container">
     <div class="columns image">
       <img src="/stylesheets/img/vail1.jpg" alt="Snowboarder" width="400px" height="500px">

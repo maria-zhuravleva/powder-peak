@@ -1,6 +1,6 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/profiles/reviews.css">
-<%# include('../partials/nav') %>
+
 <nav>
   <div class="top-bar">
     <div class="logo">pd.</div>
@@ -13,7 +13,6 @@
           <a href="/resorts" class=<%= title === 'Powder Peak' ? 'active' : '' %>>resorts</a>
         </li>
         <li>
-          <!-- <a href="/profiles">profile</a> -->
           <% if (user && user.profile) { %>
             <a href="/profiles/<%= user.profile._id %>">profile</a>
           <% } %>          
@@ -21,7 +20,6 @@
         <li>
           <% if (user) { %>
             <a href="/auth/logout" class="right">Logout
-              <!-- <button type="submit">Logout</button> -->
             </a>
           <% } else { %>
             <div class="google-login">
@@ -85,37 +83,3 @@
 </main>
 
 <%- include('../partials/footer') %>
-
-<!-- <%# if (resorts && resorts.length > 0) { %>
-  <%# resorts.forEach(resort => { %>
-    <%# resort.reviews.forEach(review => { %>
-      <div class="review">
-        <p>Resort: <%# resort.name %></p>
-        <div class="line"></div>
-        <p>Content: <%# review.content %></p>
-        <div class="line"></div>
-        <p>Rating: <%# review.rating %></p>
-        <div class="line"></div>
-      </div>
-    <%# }) %>
-  <%# }) %>
-<%# } else { %>
-  <p>No reviews found</p>
-<%# } %> -->
-
-<!-- <%# if (resorts && resorts.length > 0) { %>
-  <%# resorts.forEach(resort => { %>
-    <%# resort.reviews.forEach(review => { %>
-      <div class="review">
-        <p>Resort: <%# resort.name %></p>
-        <div class="line"></div>
-        <p>Content: <%# review.content %></p>
-        <div class="line"></div>
-        <p>Rating: <%# review.rating %></p>
-        <div class="line"></div>
-      </div>
-    <%# }) %>
-  <%# }) %>
-<%# } else { %>
-  <p>No reviews found</p>
-<%# } %> -->
