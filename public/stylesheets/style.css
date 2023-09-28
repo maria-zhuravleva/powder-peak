@@ -233,7 +233,7 @@ main.home-page {
 
 .wrapper .carousel {
   white-space: nowrap;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .carousel img {

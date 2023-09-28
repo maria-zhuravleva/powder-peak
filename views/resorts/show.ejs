@@ -156,7 +156,7 @@
                 <td><%= review.rating %></td>
                 <td><%= review.createdAt.toLocaleDateString() %></td>
                 <td class="actions">
-                  <% if (review.commenter.equals(user?.profile._id)) { %>
+                  <% if (review.commenter.equals(user?.profile._id) || user?.profile.admin) { %>
                     <div class="action-buttons">
                       <a href="/resorts/<%= resort._id %>/reviews/<%= review._id %>/edit">
                         <button class="btn">Edit Review</button>

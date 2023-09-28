@@ -14,9 +14,9 @@ router.post('/', isAuthorized, resortsCtrl.create)
 router.post('/:resortId/reviews', isLoggedIn, resortsCtrl.createReview)
 router.post('/:resortId/favoriteResorts', isLoggedIn, resortsCtrl.addFavoriteResort)
 router.put("/:resortId", isAuthorized, resortsCtrl.update)
-router.put('/:resortId/reviews/:reviewId', isLoggedIn, resortsCtrl.updateReview)
+router.put('/:resortId/reviews/:reviewId', isLoggedIn, isAuthorized, resortsCtrl.updateReview)
 router.delete("/:resortId", isAuthorized, resortsCtrl.delete)
-router.delete('/:resortId/reviews/:reviewId', isLoggedIn, resortsCtrl.deleteReview)
+router.delete('/:resortId/reviews/:reviewId', isLoggedIn, isAuthorized, resortsCtrl.deleteReview)
 router.delete('/:resortId/favoriteResorts/:favoriteResortId', isLoggedIn, resortsCtrl.deleteFavoriteResort)
 
 export {
