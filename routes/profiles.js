@@ -9,6 +9,7 @@ router.get('/:profileId', isLoggedIn, profilesCtrl.show)
 router.get('/:profileId/reviews', isLoggedIn, profilesCtrl.renderReviews)
 router.get('/:profileId/favoriteResorts', isLoggedIn, profilesCtrl.renderFavoriteResorts)
 
+
 export {
   router
 }

@@ -13,7 +13,10 @@
           <a href="/resorts">resorts</a>
         </li>
         <li>
-          <a href="/profiles">profile</a>
+          <% if (user && user.profile) { %>
+            <a href="/profiles/<%= user.profile._id %>">profile</a>
+          <% } %>          
+          <!-- <a href="/profiles">profile</a> -->
         </li>
         <li>
           <% if (user) { %>
@@ -67,7 +70,7 @@
     </div>
   </div>
   
-  <% if (user && user.profile && user.profile._id.equals(resorts[0].creator)) { %>
+  <% if (user && user.profile && user.profile.admin) { %>
     <div class="button-container">
       <a href="/resorts/new">
         <button type="submit" id="new-resort-btn">Add Resort</button>

@@ -13,7 +13,10 @@
           <a href="/resorts">resorts</a>
         </li>
         <li>
-          <a href="/profiles">profile</a>
+          <!-- <a href="/profiles">profile</a> -->
+          <% if (user && user.profile) { %>
+            <a href="/profiles/<%= user.profile._id %>">profile</a>
+          <% } %>          
         </li>
         <li>
           <% if (user) { %>

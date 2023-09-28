@@ -5,6 +5,8 @@ const Schema = mongoose.Schema
 const profileSchema = new Schema({
   name: String,
   avatar: String,
+  admin: {type: Boolean, default: false},
+  favoriteResorts: [{type: Schema.Types.ObjectId, ref: 'Resort'}]
 }, {
   timestamps: true
 })

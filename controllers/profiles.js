@@ -114,29 +114,46 @@ function renderReviews(req, res){
 // }
 
 function renderFavoriteResorts(req, res){
-  const profileId = req.params.profileId
-
-  Resort.find({ creator: profileId })
-    .then(resorts => {
-      Profile.findById(profileId)
-        .then(profile => {
-          res.render('profiles/favoriteResorts', {
-            profile,
-            profileId, 
-            resorts,
-            title: 'Your Favorite Resorts'
-          })
-        })
-        .catch(err => {
-          console.log(err)
-          res.redirect('/profiles')
-        })
+  Profile.findById(req.user.profile._id)
+  .populate('favoriteResorts')
+  .then(profile=> {
+    console.log(profile)
+    res.render('profiles/favoriteResorts', {
+      resorts: profile.favoriteResorts,
+      profile,
+      title: 'Your Favorite Resorts'
     })
-    .catch(err => {
+  })
+      .catch(err => {
       console.log(err)
       res.redirect('/profiles')
-    })
+    });
 }
+
+// function renderFavoriteResorts(req, res){
+//   const profileId = req.params.profileId
+
+//   Resort.find({ creator: profileId })
+//     .then(resorts => {
+//       Profile.findById(profileId)
+//         .then(profile => {
+//           res.render('profiles/favoriteResorts', {
+//             profile,
+//             profileId, 
+//             resorts,
+//             title: 'Your Favorite Resorts'
+//           })
+//         })
+//         .catch(err => {
+//           console.log(err)
+//           res.redirect('/profiles')
+//         })
+//     })
+//     .catch(err => {
+//       console.log(err)
+//       res.redirect('/profiles')
+//     })
+// }
 
 
 

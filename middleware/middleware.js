@@ -14,17 +14,16 @@ function isLoggedIn(req, res, next) {
 
 
 function isAuthorized(req, res, next) {
-  const loggedUserId = req.user ? req.user.id : null
-  const authorizedUser = '650e2b53d428f18bfd988a96'
-
+  // const loggedUserId = req.user ? req.user.id : null
+  // const authorizedUser = '650e2b53d428f18bfd988a96'
   // console.log('Logged User ID:', typeof loggedUserId) 
   // console.log('Authorized ID:', typeof authorizedUser)
 
-    if (loggedUserId === authorizedUser) {
-      return next()
-    } else {
-      res.redirect('/')
-    }
+  if (req.user.profile.admin) {
+    return next()
+  } else {
+    res.redirect('/')
+  }
 }
 
 

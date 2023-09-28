@@ -1,4 +1,5 @@
 import { Resort } from '../models/resort.js'
+import { Profile } from '../models/profile.js'
 
 function index(req, res) {
   Resort.find({})
@@ -23,7 +24,7 @@ function newResort(req, res) {
 function create(req, res) {
   req.body.creator = req.user.profile._id
   req.body.amenities = req.body.amenities.split(',').map(item => item.trim())
-  
+
   Resort.create(req.body)
   .then(resort => {
     res.redirect('/resorts')
@@ -182,57 +183,127 @@ function updateReview(req, res) {
   })
 }
 
+// function addFavoriteResort(req, res) {
+//   Profile.findById(req.user.profile._id)
+//   .then(profile => {
+//     profile.favoriteResorts.push(req.params.resortId)
+//     profile.save()
+//     .then(() => {
+//       res.redirect(`/resorts/${req.params.resortId}`)
+//     })
+//   })
+//   .catch(err => {
+//     console.log(err)
+//     res.redirect('/resorts')
+//   })
+// }
+
 function addFavoriteResort(req, res) {
-  Resort.findById(req.params.resortId)
-  .then(resort => {
-    const isAlreadyFavorite = resort.favoriteResorts.some(favorite => favorite.owner.equals(req.user.profile._id))
-    if (isAlreadyFavorite) {
-      console.log('Redirecting because already favorite')
-      return res.redirect(`/resorts/${resort._id}`)
-    }
-    req.body.owner = req.user.profile._id
+  const userId = req.user.profile._id
+  const resortId = req.params.resortId
 
-    const newFavorite = {
-      owner: req.user.profile._id,
-      name: resort.name
-    }
+  Profile.findById(userId)
+    .then(profile => {
+      if (!profile.favoriteResorts.includes(resortId)) {
+        profile.favoriteResorts.push(resortId)
 
-    resort.favoriteResorts.push(newFavorite)
-    return resort.save()
-    .then(() => {
-      console.log('Redirecting after save')
-      res.redirect(`/resorts/${req.params.resortId}`)
+        profile.save()
+          .then(() => {
+            res.redirect(`/resorts/${resortId}`)
+          })
+          .catch(err => {
+            console.log(err);
+            res.redirect(`/resorts/${resortId}`)
+          })
+      } else {
+        res.redirect(`/resorts/${resortId}`)
+      }
     })
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/resorts')
-  })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/resorts')
+    })
 }
+
+
+// function addFavoriteResort(req, res) {
+//   Resort.findById(req.params.resortId)
+//   .then(resort => {
+//     const isAlreadyFavorite = resort.favoriteResorts.some(favorite => favorite.owner.equals(req.user.profile._id))
+//     if (isAlreadyFavorite) {
+//       console.log('Redirecting because already favorite')
+//       return res.redirect(`/resorts/${resort._id}`)
+//     }
+//     req.body.owner = req.user.profile._id
+
+//     const newFavorite = {
+//       owner: req.user.profile._id,
+//       name: resort.name
+//     }
+
+//     resort.favoriteResorts.push(newFavorite)
+//     return resort.save()
+//     .then(() => {
+//       console.log('Redirecting after save')
+//       res.redirect(`/resorts/${req.params.resortId}`)
+//     })
+//   })
+//   .catch(err => {
+//     console.log(err)
+//     res.redirect('/resorts')
+//   })
+// }
 
 function deleteFavoriteResort(req, res){
-  Resort.findById(req.params.resortId)
-  .then(resort => {
-    const favoriteResort = resort.favoriteResorts.id(req.params.favoriteResortId)
-    if (favoriteResort.owner.equals(req.user.profile._id)) {
-      resort.favoriteResorts.remove(favoriteResort)
-      resort.save()
-      .then(() => {
-        res.redirect(`/profiles/${req.user.profile._id}`)
-      })
-      .catch(err => {
-        console.log(err)
-        res.redirect('/profiles')
-      })
-    } else {
-      throw new Error('🚫 Not authorized 🚫')
-    }
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/profiles')
-  })
+  const userId = req.user.profile._id
+  const favoriteResortId = req.params.favoriteResortId
+
+  Profile.findById(userId)
+    .then(profile => {
+      if (profile.favoriteResorts.includes(favoriteResortId)) {
+        profile.favoriteResorts = profile.favoriteResorts.filter(id => id.toString() !== favoriteResortId)
+        profile.save()
+          .then(() => {
+            res.redirect(`/profiles/${userId}`)
+          })
+          .catch(err => {
+            console.log(err)
+            res.redirect('/profiles')
+          })
+      } else {
+        throw new Error('Favorite resort not found or unauthorized')
+      }
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/profiles')
+    })
 }
+
+
+// function deleteFavoriteResort(req, res){
+//   Resort.findById(req.params.resortId)
+//   .then(resort => {
+//     const favoriteResort = resort.favoriteResorts.id(req.params.favoriteResortId)
+//     if (favoriteResort.owner.equals(req.user.profile._id)) {
+//       resort.favoriteResorts.remove(favoriteResort)
+//       resort.save()
+//       .then(() => {
+//         res.redirect(`/profiles/${req.user.profile._id}`)
+//       })
+//       .catch(err => {
+//         console.log(err)
+//         res.redirect('/profiles')
+//       })
+//     } else {
+//       throw new Error('🚫 Not authorized 🚫')
+//     }
+//   })
+//   .catch(err => {
+//     console.log(err)
+//     res.redirect('/profiles')
+//   })
+// }
 
 export {
   index,
