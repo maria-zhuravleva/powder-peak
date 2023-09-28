@@ -417,17 +417,17 @@ div.resorts a {
   }
   
   .resorts:nth-child(4):before {
-    background-image: url('../img/resorts-list-one.jpg');
+    background-image: url('../img/aspen1.jpg');
     background-size: cover;
   }
   
   .resorts:nth-child(5):before {
-    background-image: url('../img/resorts-list-new-two.jpg');
+    background-image: url('../img/resorts-pic-5.jpg');
     background-size: cover;
   }
   
   .resorts:nth-child(6):before {
-    background-image: url('../img/resorts-list-new-four.jpg');
+    background-image: url('../img/resorts-list-twentyone.jpg');
     background-size: cover;
   }
   
@@ -437,7 +437,7 @@ div.resorts a {
   }
   
   .resorts:nth-child(8):before {
-    background-image: url('../img/resorts-list-other.jpg');
+    background-image: url('../img/resort-pic8.jpg');
     background-size: cover;
   }
 
