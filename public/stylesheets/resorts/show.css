@@ -140,6 +140,10 @@
   text-decoration: underline;
 }
 
+.top-bar .menu ul li a.active {
+  color: #D5DADC; 
+}
+
 body {
   overflow-x: hidden;
   font-family: 'Collingar', sans-serif;

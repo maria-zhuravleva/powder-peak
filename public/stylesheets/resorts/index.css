@@ -148,6 +148,10 @@ html, body {
   text-decoration: underline;
 }
 
+.top-bar .menu ul li a.active {
+  color: #D5DADC; 
+}
+
 .main-content h1 {
   font-weight: normal;
   border-bottom: black solid 1px;  

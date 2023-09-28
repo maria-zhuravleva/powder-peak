@@ -290,6 +290,11 @@ h3#home-page {
   text-transform: uppercase;
 }
 
+.top-bar .menu ul li a.active {
+  color: #D5DADC; 
+}
+
+
 /* @media screen and (max-width: 414px) and (max-height: 896px) and (-webkit-device-pixel-ratio: 2) {
   .menu ul li a {
     font-size: 10px;

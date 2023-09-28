@@ -140,6 +140,10 @@ body {
   text-decoration: underline;
 }
 
+.top-bar .menu ul li a.active {
+  color: #D5DADC; 
+}
+
 
 h2 {
   margin: 0 auto;

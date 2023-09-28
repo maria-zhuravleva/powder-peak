@@ -141,6 +141,10 @@
   text-decoration: underline;
 }
 
+.top-bar .menu ul li a.active {
+  color: #D5DADC; 
+}
+
 .form-container {
   display: flex;
   justify-content: center;

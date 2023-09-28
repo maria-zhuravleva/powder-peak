@@ -7,14 +7,14 @@
     <div class="menu">
       <ul>
         <li>
-          <a href="/">home</a>
+          <a href="/" class=<%= title === 'Home Page' ? 'active' : '' %>>home</a>
         </li>
         <li>
-          <a href="/resorts">resorts</a>
+          <a href="/resorts" class=<%= title === 'Powder Peak' ? 'active' : '' %>>resorts</a>
         </li>
         <li>
           <% if (user && user.profile) { %>
-            <a href="/profiles/<%= user.profile._id %>">profile</a>
+            <a href="/profiles/<%= user.profile._id %>" class=<%= title === 'Profile' ? 'active' : '' %>>profile</a>
           <% } %>          
           <!-- <a href="/profiles">profile</a> -->
         </li>

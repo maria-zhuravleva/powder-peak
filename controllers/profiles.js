@@ -21,7 +21,8 @@ function show(req, res) {
   .then(profile => {
     const isSelf = profile._id.equals(req.user.profile._id)
     res.render("profiles/show", {
-      title: `${profile.name}'s profile`,
+      // title: `${profile.name}'s profile`,
+      title: 'Profile',
       profile,
       isSelf,
     })

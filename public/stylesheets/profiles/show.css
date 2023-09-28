@@ -105,6 +105,10 @@
   text-transform: uppercase;
 }
 
+.top-bar .menu ul li a.active {
+  color: #D5DADC; 
+}
+
 .google-login {
   display: flex;
   align-items: center;
