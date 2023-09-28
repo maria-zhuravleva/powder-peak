@@ -299,6 +299,40 @@ form {
 }
 
 
+@media screen and (max-width: 828px) {
+  .logo {
+    font-size: 18px;
+    padding: 16px;
+  }
 
+  .menu ul li {
+    padding-bottom: 20px;
+  }
+
+  .menu ul li a button {
+    font-size: 14px;
+    padding: 8px 24px;
+  }
+
+  .google-login {
+    margin-bottom: 10px;
+  }
+
+  .g_id_signin {
+    font-size: 14px;
+  }
+
+  button#save-btn {
+    font-size: 12px; 
+  }
+
+  div.label {
+    font-size: 12px;
+  }
+
+  h2#new-resort-heading {
+    font-size: 20px;
+  }
+}
 
 
