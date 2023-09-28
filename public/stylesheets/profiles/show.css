@@ -63,15 +63,15 @@
 } 
 
 .menu ul li:hover:nth-of-type(2) ~ .line {
-  left: 27%;
+  left: 24%;
 } 
 
 .menu ul li:hover:nth-of-type(3) ~ .line {
-  left: 53%;
+  left: 49%;
 } 
 
 .menu ul li:hover:nth-of-type(4) ~ .line {
-  left: 78%;
+  left: 75%;
 } 
 
 .menu ul li:hover .line {
@@ -83,7 +83,7 @@
   background-color: black;
   height: 2px;
   position: absolute;
-  left: 0;
+  left: -4%;
   bottom: 0px;
   transition: .5s;
 }
