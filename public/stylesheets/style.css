@@ -26,7 +26,7 @@ body {
 
 .banner::before { 
   content: "";
-  background: rgba(0, 0, 0, 0.4); 
+  background: rgba(0, 0, 0, 0.1); 
   position: absolute;
   top: 0;
   right: 0;
@@ -175,7 +175,7 @@ body {
 .banner-text-items {
   color: #FFFFFF;
   margin: auto;
-  /* text-align: center; */
+  text-align: center;
   width: 50%;
 }
 
@@ -210,6 +210,84 @@ body {
   flex: 1;
   padding: 3%;
   text-align: center;
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 550px;
+  padding: 0 35px;
+}
+
+.wrapper {
+  max-width: 1200px;
+  position: relative;
+}
+
+.carousel {
+  white-space: nowrap;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch; 
+  padding-bottom: 10px;
+}
+
+.wrapper .carousel {
+  white-space: nowrap;
+  cursor: pointer;
+  /* overflow: hidden; */
+}
+
+.carousel img {
+  height: 340px;
+  object-fit: cover;
+  width: calc(100% / 4);
+  margin-left: 14px;
+  display: inline-block;
+}
+
+.carousel img:first-child {
+  margin-left: 0px;
+}
+
+.wrapper i {
+  top: 50%;
+  position: absolute;
+  cursor: pointer;
+  height: 46px;
+  width: 46px;
+  text-align: center;
+  line-height: 46px;
+  font-size: 24px;
+  transform: translateY(-50%);
+}
+
+.wrapper i:first-child {
+  left: -23px;
+}
+
+.wrapper i:last-child {
+  right: -23px;
+}
+
+h3::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  z-index: -1;
+  /* width: 130%;
+  height: 130%;  */
+  /* background-color: rgba(136, 135, 137, 0.2); */
+  /* color: rgba(0, 0, 0, 0.3); */
+}
+
+h3 {
+  position: absolute;
+  top: 82%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  color: black;
+  z-index: 1;
 }
 
 /* @media screen and (max-width: 414px) and (max-height: 896px) and (-webkit-device-pixel-ratio: 2) {
@@ -351,5 +429,9 @@ body {
   .banner-text-items p {
     font-size: 13px;
     line-height: 20px;
+  }
+
+  .carousel img {
+    width: calc(100% / 1.3);
   }
 }
