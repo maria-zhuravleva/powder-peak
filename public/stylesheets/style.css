@@ -234,7 +234,6 @@ main.home-page {
 .wrapper .carousel {
   white-space: nowrap;
   cursor: pointer;
-  /* overflow: hidden; */
 }
 
 .carousel img {
@@ -283,7 +282,7 @@ h3#home-page::before {
 
 h3#home-page {
   position: absolute;
-  top: 82%;
+  top: 85%;
   left: 52%;
   transform: translate(-50%, -50%);
   color: black;
