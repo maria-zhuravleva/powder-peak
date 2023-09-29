@@ -53,14 +53,16 @@
 </nav>
 
 <main>
-  <div class="go-back">
-    <img 
-      class="profile-avatar"
-      src="<%= profile.avatar %>" 
-      alt="<%= profile.name %>'s avatar"
-    >
+  <div class="square">
+    <div class="go-back">
+      <img 
+        class="profile-avatar"
+        src="<%= profile.avatar %>" 
+        alt="<%= profile.name %>'s avatar"
+      >
+    </div>
+    <h1><%= isSelf ? "Your Profile" : profile.name %></h1>
   </div>
-  <h1><%= isSelf ? "Your Profile" : profile.name %></h1>
   <a class="page-items" href="/profiles/<%= profile._id%>/favoriteResorts">Favorite Resorts</a>
   <div class="circle">
     <div id="circle-line"></div>

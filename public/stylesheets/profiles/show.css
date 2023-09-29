@@ -224,6 +224,16 @@ h1 {
   transform: translateX(-50%) rotate(0deg);
 }
 
+.square {
+  border: #000 solid 1px;
+  width: 300px;
+  height: 300px;
+}
+
+img.profile-avatar {
+  margin-top: 20px;
+}
+
 @media screen and (max-width: 414px) and (max-height: 896px) and (-webkit-device-pixel-ratio: 2) {
   .menu ul li a {
     font-size: 10px;
@@ -287,5 +297,15 @@ h1 {
 
   .line {
     width: 50px;
+  }
+
+  .square {
+    width: 200px;
+    height: 200px;
+  }
+  
+  img.profile-avatar {
+    margin-top: 20px;
+    margin-left: 55px;
   }
 }
