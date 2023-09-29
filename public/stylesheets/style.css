@@ -412,8 +412,8 @@ h3#home-page {
 
   .google-login {
     position: absolute;
-    top: -7%;
-    right: -80%;
+    top: -5%;
+    right: 150%;
   }
   
   .wrapper {
