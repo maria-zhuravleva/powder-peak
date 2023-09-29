@@ -3,7 +3,7 @@
   src: url('collingar/ttf/collingar-collingar-400.ttf') format('truetype');
 }
 body {
-  font-family: 'Collingar', sans-serif;
+  font-family: 'Collingar', 'Bodoni Moda', serif;
 }
 
 * {

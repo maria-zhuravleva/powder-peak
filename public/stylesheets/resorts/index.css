@@ -3,7 +3,7 @@
   src: url('collingar/ttf/collingar-collingar-400.ttf') format('truetype');
 }
 body {
-  font-family: 'Collingar', sans-serif;
+  font-family: 'Collingar', 'Bodoni Moda', serif;
 }
 
 * {
@@ -151,7 +151,7 @@ html, body {
 .main-content h1 {
   font-weight: normal;
   border-bottom: black solid 1px;  
-  font-family: 'Collingar', sans-serif;
+  font-family: 'Collingar', 'Bodoni Moda', serif;
 }
 
 .main-content {
@@ -218,7 +218,7 @@ html, body {
 
 div.resorts a {
   text-decoration: none;
-  font-family: 'Collingar', sans-serif;
+  font-family: 'Collingar', 'Bodoni Moda', serif;
 }
 
 .resorts:before {
@@ -315,7 +315,7 @@ div.resorts a {
 }
 
 #new-resort-btn {
-  font-family: 'Collingar', sans-serif;
+  font-family: 'Collingar', 'Bodoni Moda', serif;
   cursor: pointer;
   font-size: 15px;
   color: black;

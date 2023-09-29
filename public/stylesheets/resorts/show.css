@@ -142,7 +142,7 @@
 
 body {
   overflow-x: hidden;
-  font-family: 'Collingar', sans-serif;
+  font-family: 'Collingar', 'Bodoni Moda', serif;
 }
 
 
@@ -240,7 +240,7 @@ p#difficulty-level {
 }
 
 .btn {
-  font-family: 'Collingar', sans-serif;
+  font-family: 'Collingar', 'Bodoni Moda', serif;
   cursor: pointer;
   font-size: 15px;
   color: black;
