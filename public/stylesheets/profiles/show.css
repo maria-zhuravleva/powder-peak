@@ -204,19 +204,22 @@ h1 {
 
 .circle {
   position: relative;
-  width: 100px;
-  height: 100px;
-  background-color: #3498db;
+  width: 110px;
+  height: 110px;
+  background-image: url('/stylesheets/img/profile.jpg');
+  background-size: 170px;
+  background-position: center;
   border-radius: 50%;
+  margin-top: 150px;
 }
 
 #circle-line {
   position: absolute;
-  top: 50%;
+  top: -125%;
   left: 50%;
-  width: 2px; /* Adjust the width of the line as needed */
-  height: 50px; /* Adjust the height of the line as needed */
-  background-color: #000; /* Set the color of the line */
+  width: 1px;
+  height: 150px;
+  background-color: #000;
   transform-origin: bottom center;
   transform: translateX(-50%) rotate(0deg);
 }

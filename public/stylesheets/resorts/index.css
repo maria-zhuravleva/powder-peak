@@ -216,6 +216,11 @@ html, body {
   background-image: url('../img/resort-pic8.jpg');
 }
 
+.resorts:nth-child(9):before {
+  background-image: url('../img/profile.jpg');
+  background-size: cover;
+}
+
 div.resorts a {
   text-decoration: none;
   font-family: 'Collingar', 'Bodoni Moda', serif;
@@ -434,6 +439,11 @@ div.resorts a {
   
   .resorts:nth-child(8):before {
     background-image: url('../img/resort-pic8.jpg');
+    background-size: cover;
+  }
+
+  .resorts:nth-child(9):before {
+    background-image: url('../img/profile.jpg');
     background-size: cover;
   }
 
