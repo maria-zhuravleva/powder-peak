@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'Collingar'; 
-  src: url('collingar/ttf/collingar-collingar-400.ttf') format('truetype');
+  src: url('/stylesheets/collingar/ttf/collingar-collingar-400.ttf');
+  /* src: url('collingar/ttf/collingar-collingar-400.ttf') format('truetype'); */
 }
 body {
   font-family: 'Collingar', 'Bodoni Moda', serif;
