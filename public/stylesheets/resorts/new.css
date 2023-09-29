@@ -1,7 +1,6 @@
 @font-face {
   font-family: 'Collingar'; 
   src: url('/stylesheets/collingar/ttf/collingar-collingar-400.ttf');
-  /* src: url('collingar/ttf/collingar-collingar-400.ttf') format('truetype'); */
 }
 
 * {
