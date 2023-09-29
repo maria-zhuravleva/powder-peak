@@ -10,13 +10,16 @@ Resort Details Page
 
 
 ## How to Navigate
-**Home Page** 
+- **Home Page** 
 The *Home* Page of Powder Peak welcomes you with a captivating collection of winter-inspired images. Scroll through to immerse yourself in the breathtaking beauty of snow-covered landscapes.
-**All Resorts Page**
+
+- **All Resorts Page**
 Navigate to the *All Resorts* page to explore a curated list of articles featuring various resorts. Discover detailed information about each location, including its amenities, difficulty level, and unique features.
-**Resort Details Page**
+
+- **Resort Details Page**
 For a deeper dive into a specific resort, select it from the list on the *All Resorts* page. Here, you'll find a wealth of information about the resort. Additionally, you can leave a review based on your own experiences or add the resort to your list of favorites.
-**Profile Page**
+
+- **Profile Page**
 Visit the *Profile* section to manage your favorite resorts. Here, you can view and modify your list, removing resorts if your preferences change. This page ensures you have easy access to the resorts that matter most to you.
 
 ## Features
