@@ -11,6 +11,7 @@ body {
   padding: 0;
 }
 
+
 .banner {
   background: url('img/clouds-bw.jpg');
   width: 100%;
@@ -57,7 +58,13 @@ body {
   -moz-flex: 3px;
   -o-flex: 3px;
   -ms-flex: 3px;
-  flex: 3px;  
+  flex: 3px; 
+}
+
+.google-login {
+  position: absolute;
+  top: -25%;
+  right: 5%;
 }
 
 .menu ul{
@@ -95,15 +102,15 @@ body {
 } 
 
 .menu ul li:hover:nth-of-type(2) ~ .line {
-  left: 27%;
+  left: 28%;
 } 
 
 .menu ul li:hover:nth-of-type(3) ~ .line {
-  left: 53%;
+  left: 54%;
 } 
 
 .menu ul li:hover:nth-of-type(4) ~ .line {
-  left: 78%;
+  left: 80%;
 } 
 
 .menu ul li:hover .line {
@@ -401,6 +408,11 @@ h3#home-page {
     min-height: auto;
     flex-direction: column; 
     text-align: center; 
+  }
+
+  .google-login {
+    top: -15%;
+    right: -70%;
   }
   
   .wrapper {
