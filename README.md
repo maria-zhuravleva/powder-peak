@@ -9,7 +9,7 @@ Resort Details Page
 ![Resort Details Screenshot](public/stylesheets/img/screenshot1.png)
 
 Phone Views
-![Phone Views Screenshot](public/stylesheets/img/screen.jpg)
+![Mobile Views Screenshot](public/stylesheets/img/screen.jpg)
 
 
 ## How to Navigate
