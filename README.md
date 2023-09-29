@@ -37,7 +37,7 @@ Visit the *Profile* section to manage your favorite resorts. Here, you can view 
 
 - **Intuitive Navigation:** Effortlessly explore the app's features with a straightforward navigation system, allowing you to find the information you need quickly and easily.
 
-## [Embark on your immersive winter adventure here](https://mz-powder-peak.fly.dev/)
+## [Experience the wonders of winter with the Powder Peak app](https://mz-powder-peak.fly.dev/)
 ## Technologies Used
 - **Frontend:** HTML5, CSS3, and the EJS templating engine
 - **Backend:** Node.js and Express.js
