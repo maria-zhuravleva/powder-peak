@@ -208,10 +208,19 @@ h1 {
   line-height: 30px;
 }
 
-.items span {
+#resort {
   line-height: 1.5;
   letter-spacing: 0.5px;
   color: #08527a;
+}
+
+.resort-name {
+  text-decoration: none;
+  color: black;
+}
+
+.resort-name:hover {
+  border-bottom: black solid 1px;
 }
 
 @media screen and (max-width: 414px) and (max-height: 896px) and (-webkit-device-pixel-ratio: 2) { 

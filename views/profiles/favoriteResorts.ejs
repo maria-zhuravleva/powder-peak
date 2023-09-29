@@ -65,10 +65,14 @@
     <% if (resorts && resorts.length > 0) { %>
       <% resorts.forEach(resort => { %>
           <div>
-            <p class="items">
-              <span>Resort:</span>
-              <%= resort.name %>
-            </p>
+            <a class="resort-name" href="/resorts/<%= resort._id %>">
+              <p class="items">
+                <span class="resort-name">
+                  <span id="resort">Resort:</span>
+                  <%= resort.name %>
+                </span>
+              </p>
+            </a>
             <p class="items">
               <span>Location:</span>
                 <%= resort.location %>
