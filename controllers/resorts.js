@@ -119,7 +119,7 @@ function deleteReview(req, res) {
   Resort.findById(req.params.resortId)
   .then(resort => {
     const review = resort.reviews.id(req.params.reviewId)
-    if (review.commenter.equals(req.user.profile._id)) {
+    if (review.commenter.equals(req.user.profile._id) || (req.user && req.user.profile.admin)) {
       resort.reviews.remove(review)
       resort.save()
       .then(() => {
@@ -143,7 +143,7 @@ function editReview(req, res) {
   Resort.findById(req.params.resortId)
   .then(resort => {
     const review = resort.reviews.id(req.params.reviewId)
-    if (review.commenter.equals(req.user.profile._id)) {
+    if (review.commenter.equals(req.user.profile._id) || (req.user && req.user.profile.admin)) {
       res.render('resorts/editReview', {
         resort, 
         review,
@@ -163,7 +163,7 @@ function updateReview(req, res) {
   Resort.findById(req.params.resortId)
   .then(resort => {
     const review = resort.reviews.id(req.params.reviewId)
-    if (review.commenter.equals(req.user.profile._id)) {
+    if (review.commenter.equals(req.user.profile._id) || (req.user && req.user.profile.admin)) {
       review.set(req.body)
       resort.save()
       .then(() => {

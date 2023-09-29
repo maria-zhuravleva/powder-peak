@@ -201,6 +201,26 @@ h1 {
   margin-bottom: 30px;
 }
 
+
+.circle {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: #3498db;
+  border-radius: 50%;
+}
+
+#circle-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px; /* Adjust the width of the line as needed */
+  height: 50px; /* Adjust the height of the line as needed */
+  background-color: #000; /* Set the color of the line */
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotate(0deg);
+}
+
 @media screen and (max-width: 414px) and (max-height: 896px) and (-webkit-device-pixel-ratio: 2) {
   .menu ul li a {
     font-size: 10px;
