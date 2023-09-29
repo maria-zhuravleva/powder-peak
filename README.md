@@ -8,7 +8,7 @@ Home Page
 Resort Details Page
 ![Resort Details Screenshot](public/stylesheets/img/screenshot1.png)
 
-Phone Views
+Mobile Views
 ![Mobile Views Screenshot](public/stylesheets/img/screen.jpg)
 
 
