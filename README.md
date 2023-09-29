@@ -8,6 +8,11 @@ Home Page
 Resort Details Page
 ![Resort Details Screenshot](public/stylesheets/img/screenshot1.png)
 
+Phone Views
+![Phone Views Screenshot](public/stylesheets/img/phone1.png)
+![Phone Views Screenshot](public/stylesheets/img/phone2.png)
+![Phone Views Screenshot](public/stylesheets/img/phone3.png)
+
 
 ## How to Navigate
 - **Home Page** 
