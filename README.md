@@ -9,7 +9,7 @@ Resort Details Page
 ![Resort Details Screenshot](public/stylesheets/img/screenshot1.png)
 
 Mobile Views
-![Mobile Views Screenshot](public/stylesheets/img/screen.jpg)
+![Mobile Views Screenshot](public/stylesheets/img/phone-wireframe.png)
 
 
 ## [Experience the wonders of winter with the Powder Peak app](https://mz-powder-peak.fly.dev/)
